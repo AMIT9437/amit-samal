@@ -1,0 +1,381 @@
+/* -------------------- General Styles -------------------- */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f8ff;
+    color: #1a1a1a;
+    line-height: 1.7;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* -------------------- Navbar -------------------- */
+.navbar {
+    background: #004aad;
+    color: #fff;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.nav-logo h2 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.nav-logo span {
+    font-size: 0.85rem;
+    color: #cce0ff;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-menu li a.active,
+.nav-menu li a:hover {
+    color: #ffd700;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* -------------------- Page Header -------------------- */
+.page-header {
+    background: linear-gradient(135deg, #0066cc, #66ccff);
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 1.3rem;
+}
+
+/* -------------------- About Content -------------------- */
+.about-content {
+    padding: 60px 0;
+}
+
+.about-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1 1 500px;
+}
+
+.about-text h2 {
+    color: #004aad;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-item h3 {
+    font-size: 2rem;
+    color: #0066cc;
+    margin: 0;
+}
+
+.stat-item p {
+    font-weight: 500;
+    color: #004aad;
+}
+
+/* About Image */
+.about-image {
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-photo {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* -------------------- Founder Profile -------------------- */
+.founder-profile {
+    padding: 60px 0;
+    background: #e6f0ff;
+}
+
+.section-title {
+    text-align: center;
+    color: #004aad;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+}
+
+.founder-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.founder-image, .founder-details {
+    flex: 1 1 400px;
+}
+
+.founder-photo {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.founder-details h3 {
+    font-size: 1.8rem;
+    color: #004aad;
+    margin-bottom: 10px;
+}
+
+.designation {
+    color: #0066cc;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.founder-details p {
+    margin-bottom: 15px;
+}
+
+.qualifications, .expertise, .philosophy {
+    margin-top: 20px;
+}
+
+.qualifications ul, .expertise ul {
+    list-style: none;
+    padding: 0;
+}
+
+.qualifications li, .expertise li {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.qualifications i, .expertise i {
+    color: #004aad;
+    margin-right: 10px;
+}
+
+/* -------------------- Company Values -------------------- */
+.company-values {
+    padding: 60px 0;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.value-card {
+    text-align: center;
+    background: #fff;
+    padding: 25px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transition: 0.4s;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.value-icon {
+    font-size: 2rem;
+    color: #004aad;
+    margin-bottom: 10px;
+}
+
+/* -------------------- Why Choose Us -------------------- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.feature {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    transition: 0.4s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: #0066cc;
+    margin-bottom: 10px;
+}
+
+/* -------------------- CTA -------------------- */
+.cta {
+    background: #004aad;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 15px;
+    margin: 50px 0;
+}
+
+.cta .btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin: 10px 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #ffd700;
+    color: #004aad;
+}
+
+.btn-primary:hover {
+    background: #ffc107;
+}
+
+/* -------------------- Footer -------------------- */
+.footer {
+    background: #004aad;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3, .footer-section h4 {
+    margin-bottom: 12px;
+    color: #ffd700;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 6px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ffd700;
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 992px) {
+    .about-grid, .founder-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-stats {
+        justify-content: center;
+    }
+
+    .founder-details {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        background: #004aad;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 250px;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
