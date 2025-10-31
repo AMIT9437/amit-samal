@@ -13,9 +13,9 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background: linear-gradient(135deg, #ffecd2, #fcb69f, #c2e9fb, #e0c3fc);
+    background: linear-gradient(135deg, #ffecd2, #fcb69f, #a1c4fd, #c2e9fb);
     background-size: 400% 400%;
-    animation: bgMove 10s infinite alternate ease-in-out;
+    animation: bgMove 12s infinite alternate ease-in-out;
     color: #222;
 }
 @keyframes bgMove {
@@ -46,7 +46,6 @@ body {
     margin: 0;
     font-weight: 700;
     color: #4a148c;
-    letter-spacing: 1px;
 }
 .nav-logo span {
     font-size: 0.9rem;
@@ -89,7 +88,7 @@ body {
 .page-header {
     text-align: center;
     padding: 130px 20px 70px;
-    background: linear-gradient(120deg, #ff6a00, #ee0979, #8e2de2, #4a00e0);
+    background: linear-gradient(120deg, #00c9ff, #92fe9d, #ff758c, #8e2de2);
     background-size: 300% 300%;
     animation: gradientShift 8s infinite alternate ease-in-out;
     color: #fff;
@@ -123,34 +122,36 @@ body {
     position: relative;
     overflow: hidden;
     border-radius: 18px;
-    padding: 30px;
+    padding: 35px;
     text-align: center;
     color: #fff;
-    background: linear-gradient(135deg, #7b4397, #dc2430);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #1e1f29, #23242a);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
     transition: all 0.5s ease;
 }
 .contact-card::before {
     content: '';
     position: absolute;
-    inset: -2px;
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
-    background-size: 300% 300%;
-    animation: glowBorder 6s infinite alternate ease-in-out;
+    inset: -3px;
+    background: linear-gradient(45deg, 
+        #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee, #84fab0, #8fd3f4, #cfd9df, #e0c3fc);
+    background-size: 400% 400%;
+    animation: rainbowGlow 6s infinite alternate ease-in-out;
     z-index: -1;
     filter: blur(10px);
+    border-radius: inherit;
 }
-@keyframes glowBorder {
+@keyframes rainbowGlow {
     0% { background-position: 0% 50%; }
     100% { background-position: 100% 50%; }
 }
 .contact-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
 }
 .contact-card i {
     font-size: 2.5rem;
-    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    background: linear-gradient(135deg, #ffe259, #ffa751);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 15px;
@@ -161,7 +162,7 @@ body {
     color: #fff;
 }
 .contact-card p {
-    color: #f3f3f3;
+    color: #e6e6e6;
 }
 
 /* ---------- Social Section ---------- */
@@ -189,9 +190,9 @@ body {
     justify-content: center;
     font-size: 1.6rem;
     color: #fff;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3, #fad0c4);
-    background-size: 200% 200%;
-    animation: iconGlow 3s infinite alternate ease-in-out;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #fad0c4, #a1c4fd);
+    background-size: 300% 300%;
+    animation: iconGlow 4s infinite alternate ease-in-out;
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     transition: transform 0.3s;
 }
