@@ -1,6 +1,6 @@
-/* ===============================
-   GLOBAL STYLES
-==================================*/
+/* ===================================================
+   GLOBAL STYLE
+===================================================*/
 * {
   margin: 0;
   padding: 0;
@@ -9,41 +9,42 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f4f7fa, #ffffff);
-  color: #222;
-  line-height: 1.6;
+  color: #fff;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-attachment: fixed;
+  overflow-x: hidden;
 }
 
-/* ===============================
+/* ===================================================
    NAVBAR
-==================================*/
+===================================================*/
 .navbar {
-  background: linear-gradient(90deg, #1a73e8, #5c2cff);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   color: #fff;
-  padding: 12px 0;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 10;
 }
 
 .nav-container {
+  width: 90%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  margin: auto;
+  padding: 12px 0;
 }
 
 .nav-logo h2 {
-  font-size: 1.6rem;
+  color: #ffcc70;
   letter-spacing: 1px;
 }
 
 .nav-logo span {
-  display: block;
-  font-size: 0.9rem;
-  opacity: 0.8;
+  font-size: 0.8rem;
+  color: #aaa;
 }
 
 .nav-menu {
@@ -55,13 +56,14 @@ body {
 .nav-link {
   color: #fff;
   text-decoration: none;
+  transition: 0.3s;
   font-weight: 500;
-  transition: 0.3s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: #ffdf6b;
+  color: #00fff0;
+  text-shadow: 0 0 10px #00fff0;
 }
 
 /* Hamburger */
@@ -70,31 +72,28 @@ body {
   flex-direction: column;
   cursor: pointer;
 }
-
 .bar {
   width: 25px;
   height: 3px;
   background-color: #fff;
   margin: 4px 0;
-  transition: 0.3s;
 }
 
-/* ===============================
+/* ===================================================
    PAGE HEADER
-==================================*/
+===================================================*/
 .page-header {
-  background: linear-gradient(135deg, #00bcd4, #673ab7);
-  color: #fff;
   text-align: center;
   padding: 80px 20px;
+  color: #fff;
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
   border-radius: 0 0 50px 50px;
-  margin-bottom: 50px;
+  box-shadow: 0 0 30px rgba(100, 100, 255, 0.4);
 }
 
 .page-header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
 }
 
 .page-header p {
@@ -102,179 +101,154 @@ body {
   opacity: 0.9;
 }
 
-/* ===============================
-   GST OVERVIEW
-==================================*/
-.gst-overview {
-  padding: 60px 10%;
-  background: #ffffff;
-  border-radius: 20px;
-  margin-bottom: 50px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
-}
-
-.overview-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.overview-text {
-  flex: 1 1 55%;
-}
-
-.overview-text h2 {
-  color: #333;
-  margin-bottom: 15px;
-  font-size: 1.8rem;
-}
-
-.overview-text p {
-  margin-bottom: 20px;
-  color: #555;
-}
-
-.gst-benefits h3 {
-  margin-bottom: 10px;
-  color: #111;
-}
-
-.gst-benefits ul {
-  list-style: none;
-}
-
-.gst-benefits li {
-  margin-bottom: 8px;
-  color: #333;
-}
-
-.gst-benefits i {
-  color: #00bcd4;
-  margin-right: 10px;
-}
-
-.overview-image {
-  flex: 1 1 35%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.image-placeholder {
-  background: linear-gradient(145deg, #ece9ff, #ffffff);
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(100, 100, 255, 0.1);
-  padding: 50px;
-  text-align: center;
-  transition: 0.4s;
-}
-
-.image-placeholder i {
-  font-size: 3rem;
-  color: #673ab7;
-  margin-bottom: 15px;
-}
-
-.image-placeholder:hover {
-  box-shadow: 0 0 25px rgba(100, 100, 255, 0.3);
-  transform: translateY(-5px);
-}
-
-/* ===============================
-   GST SERVICES SECTION
-==================================*/
+/* ===================================================
+   GST SERVICES
+===================================================*/
 .gst-services {
-  padding: 70px 10%;
-  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  padding: 80px 10%;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 700;
-  color: #222;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
   position: relative;
 }
 
+.section-title::after {
+  content: "";
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #ffcc70, #ff758c, #a8ff78);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* SERVICES GRID */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 30px;
+  gap: 40px;
 }
 
-/* Glowing Card Effect */
+/* COLORFUL GLOW CARD */
 .service-card {
-  background: linear-gradient(145deg, #ffffff, #f6f6f6);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5));
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
-  padding: 25px 20px;
-  box-shadow: 0 0 15px rgba(100, 100, 255, 0.2);
+  padding: 25px;
+  text-align: center;
+  position: relative;
   transition: all 0.4s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
 }
 
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(255, 200, 0, 0.6),
-              0 0 25px rgba(0, 255, 200, 0.4),
-              0 0 25px rgba(255, 100, 255, 0.3);
+/* Glowing Gradient Border Animation */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #ff00cc, #3333ff, #00fff0, #ffcc70, #ff758c, #a8ff78);
+  background-size: 400%;
+  animation: glowingBorder 8s linear infinite;
+  filter: blur(6px);
+  opacity: 0.8;
+}
+
+@keyframes glowingBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .service-icon {
-  font-size: 2.5rem;
-  color: #673ab7;
+  font-size: 2.8rem;
+  color: #00fff0;
   margin-bottom: 15px;
+  text-shadow: 0 0 20px #00fff0;
 }
 
 .service-card h3 {
   font-size: 1.3rem;
-  color: #222;
+  color: #ffdf6b;
   margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(255, 223, 107, 0.6);
 }
 
 .service-card p {
-  color: #555;
+  color: #eee;
   font-size: 0.95rem;
   margin-bottom: 15px;
+  opacity: 0.9;
 }
 
 .service-features {
   list-style: none;
   text-align: left;
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
 
 .service-features li {
   padding: 5px 0;
-  color: #333;
+  color: #fff;
+  font-size: 0.9rem;
 }
 
 .service-link {
-  text-decoration: none;
-  color: #1a73e8;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #00fff0, #007bff);
+  color: #000;
   font-weight: 600;
-  transition: 0.3s;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .service-link:hover {
-  color: #ff4081;
+  background: linear-gradient(90deg, #ffdf6b, #ff758c);
+  color: #000;
+  box-shadow: 0 0 15px rgba(255, 223, 107, 0.8);
 }
 
-/* ===============================
+/* Hover Glow */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.6),
+              0 0 60px rgba(255, 100, 255, 0.3);
+}
+
+/* ===================================================
    CTA SECTION
-==================================*/
+===================================================*/
 .cta {
-  background: linear-gradient(135deg, #673ab7, #512da8);
-  color: #fff;
-  padding: 70px 20px;
   text-align: center;
+  padding: 70px 20px;
+  color: #fff;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border-radius: 40px;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+  margin: 70px 10%;
 }
 
 .cta h2 {
   font-size: 2rem;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .cta p {
@@ -282,100 +256,86 @@ body {
   margin-bottom: 25px;
 }
 
-.btn {
-  display: inline-block;
+.btn-primary {
+  background: linear-gradient(90deg, #ffdf6b, #ff758c);
+  color: #000;
   padding: 12px 25px;
   border-radius: 30px;
-  text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background: #ff4081;
-  color: #fff;
-}
-
-.btn-secondary {
-  background: #fff;
-  color: #673ab7;
-  border: 2px solid #fff;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .btn-primary:hover {
-  background: #ff80ab;
+  box-shadow: 0 0 20px rgba(255, 223, 107, 0.8);
 }
 
-.btn-secondary:hover {
-  background: #673ab7;
-  color: #fff;
-}
-
-/* ===============================
-   FOOTER
-==================================*/
+/* ===================================================
+   FOOTER - CENTER ALIGNED
+===================================================*/
 .footer {
-  background: #1a1a1a;
-  color: #ccc;
-  padding: 60px 10%;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 60px 5%;
+  color: #ddd;
+  text-align: center;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
 }
 
 .footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
 }
 
-.footer-section h3,
-.footer-section h4 {
-  color: #fff;
-  margin-bottom: 15px;
+.footer-section {
+  width: 100%;
+  max-width: 700px;
 }
 
-.footer-section p,
-.footer-section a {
-  color: #bbb;
+.footer h3, .footer h4 {
+  color: #ffcc70;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(255, 204, 112, 0.6);
+}
+
+.footer p, .footer ul {
   font-size: 0.95rem;
+  color: #bbb;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.footer-section a:hover {
+.footer ul li {
+  margin: 5px 0;
+}
+
+.footer a {
+  color: #00fff0;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a:hover {
   color: #ffdf6b;
+  text-shadow: 0 0 10px #ffdf6b;
 }
 
 .footer-bottom {
-  border-top: 1px solid #333;
-  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 30px;
   padding-top: 15px;
-  font-size: 0.85rem;
-  color: #888;
+  font-size: 0.9rem;
+  color: #aaa;
 }
-
-/* ===============================
+/* ===================================================
    RESPONSIVE
-==================================*/
+===================================================*/
 @media (max-width: 768px) {
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    background: #1a1a1a;
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .overview-content {
-    flex-direction: column;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
+  .nav-menu { display: none; flex-direction: column; }
+  .nav-menu.active { display: flex; background: rgba(0, 0, 0, 0.9); padding: 20px 0; }
+  .hamburger { display: flex; }
+  .services-grid { grid-template-columns: 1fr; }
 }
