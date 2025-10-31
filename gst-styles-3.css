@@ -339,3 +339,85 @@ body {
   .hamburger { display: flex; }
   .services-grid { grid-template-columns: 1fr; }
 }
+/* ===================================================
+   GST OVERVIEW SECTION - CENTERED, CLEAN LAYOUT
+===================================================*/
+.gst-overview {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 60px 5%;
+  margin: 50px auto;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+  text-align: center;
+}
+
+.overview-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.overview-text {
+  flex: 1;
+  text-align: justify;
+  color: #ddd;
+  line-height: 1.8;
+  font-size: 1rem;
+  padding: 20px 30px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+}
+
+.overview-text h2, .gst-benefits h3 {
+  text-align: center;
+  color: #00fff0;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.gst-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.gst-benefits li {
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+
+.gst-benefits i {
+  color: #00fff0;
+  margin-right: 8px;
+}
+
+.overview-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-placeholder {
+  text-align: center;
+  padding: 30px;
+  background: rgba(0, 255, 255, 0.1);
+  border: 2px dashed rgba(0, 255, 255, 0.4);
+  border-radius: 15px;
+  color: #00fff0;
+  font-size: 1.2rem;
+  width: 280px;
+  transition: 0.4s;
+}
+
+.image-placeholder:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+}
