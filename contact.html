@@ -13,7 +13,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background: linear-gradient(135deg, #d4fc79, #96e6a1, #a1c4fd, #c2e9fb);
+    background: linear-gradient(135deg, #ffecd2, #fcb69f, #c2e9fb, #e0c3fc);
     background-size: 400% 400%;
     animation: bgMove 10s infinite alternate ease-in-out;
     color: #222;
@@ -25,9 +25,9 @@ body {
 
 /* ---------- Navbar ---------- */
 .navbar {
-    background: #ffffffdd;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     position: fixed;
     top: 0;
     width: 100%;
@@ -45,11 +45,12 @@ body {
 .nav-logo h2 {
     margin: 0;
     font-weight: 700;
-    color: #0a3d62;
+    color: #4a148c;
+    letter-spacing: 1px;
 }
 .nav-logo span {
     font-size: 0.9rem;
-    color: #ff6b81;
+    color: #ff4081;
 }
 .nav-menu {
     display: flex;
@@ -57,20 +58,20 @@ body {
     gap: 1.8rem;
 }
 .nav-link {
-    color: #222;
+    color: #333;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s, transform 0.2s;
+    transition: all 0.3s;
 }
 .nav-link:hover {
-    color: #ff4757;
-    transform: scale(1.05);
+    color: #ff4081;
+    transform: scale(1.1);
 }
 .nav-link.active {
-    color: #1e90ff;
+    color: #7e57c2;
 }
 
-/* Hamburger */
+/* ---------- Hamburger ---------- */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -88,12 +89,12 @@ body {
 .page-header {
     text-align: center;
     padding: 130px 20px 70px;
-    background: linear-gradient(120deg, #00c6ff, #0072ff, #8e2de2, #4a00e0);
-    background-size: 400% 400%;
+    background: linear-gradient(120deg, #ff6a00, #ee0979, #8e2de2, #4a00e0);
+    background-size: 300% 300%;
     animation: gradientShift 8s infinite alternate ease-in-out;
     color: #fff;
     border-radius: 0 0 60% 60% / 0 0 10% 10%;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
@@ -102,62 +103,76 @@ body {
 .page-header h1 {
     font-size: 3rem;
     font-weight: 700;
-    text-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 .page-header p {
     font-size: 1.2rem;
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 /* ---------- Contact Cards ---------- */
 .contact-info-cards {
-    padding: 80px 20px;
+    padding: 90px 20px;
 }
 .contact-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 35px;
+    gap: 40px;
 }
 .contact-card {
-    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    position: relative;
+    overflow: hidden;
     border-radius: 18px;
     padding: 30px;
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: all 0.4s ease;
-    border: 3px solid transparent;
-    background-clip: padding-box;
+    color: #fff;
+    background: linear-gradient(135deg, #7b4397, #dc2430);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transition: all 0.5s ease;
+}
+.contact-card::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+    background-size: 300% 300%;
+    animation: glowBorder 6s infinite alternate ease-in-out;
+    z-index: -1;
+    filter: blur(10px);
+}
+@keyframes glowBorder {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
 .contact-card:hover {
     transform: translateY(-10px) scale(1.03);
-    border-color: #8e2de2;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
 }
 .contact-card i {
     font-size: 2.5rem;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 15px;
 }
 .contact-card h3 {
-    color: #1a1a1a;
     margin-bottom: 10px;
     font-size: 1.4rem;
+    color: #fff;
 }
 .contact-card p {
-    color: #444;
+    color: #f3f3f3;
 }
 
 /* ---------- Social Section ---------- */
 .contact-social {
     text-align: center;
-    margin-top: 70px;
+    margin-top: 80px;
 }
 .contact-social h2 {
-    font-size: 2.2rem;
-    color: #0a3d62;
-    margin-bottom: 30px;
+    font-size: 2.3rem;
+    color: #311b92;
+    margin-bottom: 35px;
 }
 .social-links {
     display: flex;
@@ -174,10 +189,10 @@ body {
     justify-content: center;
     font-size: 1.6rem;
     color: #fff;
-    background: linear-gradient(135deg, #ff6b81, #ff4757, #ff7e5f);
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #fad0c4);
     background-size: 200% 200%;
     animation: iconGlow 3s infinite alternate ease-in-out;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     transition: transform 0.3s;
 }
 @keyframes iconGlow {
@@ -185,7 +200,7 @@ body {
     100% { background-position: 100% 50%; }
 }
 .social-links a:hover {
-    transform: scale(1.2) rotate(8deg);
+    transform: scale(1.2) rotate(10deg);
 }
 
 /* ---------- Responsive ---------- */
@@ -206,7 +221,7 @@ body {
     }
     .nav-menu.active { display: flex; }
     .hamburger { display: flex; }
-    .page-header h1 { font-size: 2rem; }
+    .page-header h1 { font-size: 2.2rem; }
 }
 </style>
 </head>
