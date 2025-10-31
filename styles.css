@@ -514,105 +514,96 @@ body {
     .section-title { font-size: 2rem; }
     .btn { padding: 10px 20px; font-size: 0.9rem; }
 }
-/* ========== HOME PAGE SERVICE CARD STYLING ========== */
-
-/* Base section setup */
+/* 🌟 SERVICES SECTION */
 .services-section {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #fef9ff, #f0f4ff, #e8fff3);
     text-align: center;
+    background: linear-gradient(120deg, #fdfbfb, #ebedee, #e9f8ff);
 }
 
 .services-section h2 {
-    font-size: 2.5rem;
-    color: #2a2a2a;
-    margin-bottom: 40px;
+    font-size: 2.8rem;
     font-weight: 700;
-    background: linear-gradient(90deg, #0077ff, #ff00aa);
+    margin-bottom: 50px;
+    color: #111;
+    background: linear-gradient(90deg, #00aaff, #ff0099);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* Card Grid */
+/* 🌈 CARD GRID */
 .service-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    gap: 35px;
 }
 
-/* Common card style */
+/* ✨ UNIFIED GLOWING CARDS */
 .service-card {
-    padding: 35px 25px;
-    border-radius: 25px;
-    transition: all 0.5s ease;
-    cursor: pointer;
-    transform: translateY(0);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-/* -------- GLASSMORPHIC CARDS (A) -------- */
-.service-card:nth-child(odd) {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    color: #222;
-}
-
-.service-card:nth-child(odd):hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-
-/* -------- GRADIENT FLOATING CARDS (B) -------- */
-.service-card:nth-child(even) {
     background: linear-gradient(135deg, #a18cd1, #fbc2eb, #f6d365, #fda085);
     background-size: 300% 300%;
-    color: white;
     animation: gradientShift 6s ease infinite;
+    color: white;
+    padding: 35px 25px;
+    border-radius: 25px;
+    text-align: center;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
 }
 
+/* 🌟 ANIMATED BACKGROUND */
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-.service-card:nth-child(even):hover {
+/* 🌠 CARD HOVER EFFECT */
+.service-card:hover {
     transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(255, 150, 200, 0.3);
+    box-shadow: 0 15px 40px rgba(255, 100, 200, 0.4);
 }
 
-/* Icon and Text */
+/* 🌟 ICONS */
 .service-card i {
-    font-size: 2.8rem;
-    margin-bottom: 15px;
-    color: inherit;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(255,255,255,0.6);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
+.service-card:hover i {
+    transform: rotate(5deg) scale(1.2);
+    text-shadow: 0 0 25px rgba(255,255,255,0.9);
+}
+
+/* 🌈 TEXT */
 .service-card h3 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
     font-weight: 600;
+    color: #fff;
 }
 
 .service-card p {
     font-size: 1rem;
+    color: rgba(255,255,255,0.95);
     line-height: 1.6;
-    color: rgba(255,255,255,0.9);
 }
 
-/* Override text color for glass cards */
-.service-card:nth-child(odd) p,
-.service-card:nth-child(odd) h3 {
-    color: #333;
+/* 🌈 FLOATING ANIMATION */
+@keyframes floatUp {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+.service-card:hover {
+    animation: floatUp 2s ease infinite, gradientShift 6s ease infinite;
 }
 
-/* Hover Glow */
-.service-card:hover i {
-    text-shadow: 0 0 20px rgba(255,255,255,0.8);
-}
-
-/* ========== RESPONSIVE ========== */
+/* 📱 RESPONSIVE */
 @media (max-width: 768px) {
     .services-section h2 {
         font-size: 2rem;
