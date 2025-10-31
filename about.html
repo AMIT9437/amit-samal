@@ -1,206 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | FREELANCER AMIT - Professional Business Services</title>
-  <meta name="description" content="Learn about FREELANCER AMIT, a professional accounting and compliance firm offering GST, MCA, ITR, and business consulting services.">
-  <link rel="stylesheet" href="about-styles-1.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — FREELANCER AMIT</title>
+  <meta name="description" content="About FREELANCER AMIT — professional business services: GST, MCA, ITR, consulting. Founder profile, vision, mission and team." />
+  <link rel="stylesheet" href="about-styles-advanced.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav class="navbar">
+  <header class="navbar">
     <div class="nav-container">
-      <div class="nav-logo">
-        <h2>FREELANCER AMIT</h2>
-        <span>Professional Business Services</span>
+      <div class="nav-brand">
+        <h1>FREELANCER AMIT</h1>
+        <span class="tagline">Professional Business Services</span>
       </div>
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link active">About</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="gst-services.html" class="nav-link">GST Services</a></li>
-        <li><a href="mca-compliance.html" class="nav-link">MCA Compliance</a></li>
-        <li><a href="itr-filing.html" class="nav-link">ITR Filing</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul>
-      <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gst-services.html">GST</a></li>
+          <li><a href="mca-compliance.html">MCA</a></li>
+          <li><a href="itr-filing.html">ITR</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h2 class="eyebrow">About Us</h2>
+        <h1>We help businesses stay compliant — and grow.</h1>
+        <p class="lead">FREELANCER AMIT delivers expert GST, MCA, ITR and finance solutions with clarity, care and measurable results.</p>
       </div>
-    </div>
-  </nav>
+    </section>
 
-  <!-- Page Header -->
-  <section class="page-header">
-    <div class="container">
-      <h1>About Us</h1>
-      <p>Your Trusted Partner in Business Success</p>
-    </div>
-  </section>
+    <section class="centered container intro-cards">
+      <!-- Intro cards: Mission / Vision / Promise -->
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Our Mission</h3>
+          <p>Deliver professional, reliable and affordable compliance services that free business owners to focus on growth.</p>
+        </article>
 
-  <!-- About Content -->
-  <section class="about-content">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text">
-          <h2>Welcome to FREELANCER AMIT - Professional Business Services</h2>
-          <p>We are a professional services firm offering complete business solutions across taxation, MCA compliance, GST services, and ITR filing. With over 6 years of combined experience, we help businesses streamline their operations, maintain compliance, and achieve financial excellence.</p>
+        <article class="info-card">
+          <h3>Our Vision</h3>
+          <p>To be a trusted partner for SMEs and startups — simplifying compliance, improving financial health and enabling scale.</p>
+        </article>
 
-          <p>Our mission is to provide accurate, reliable, and affordable financial and compliance services for individuals, entrepreneurs, and small-to-medium enterprises. We are driven by trust, integrity, and the goal of empowering our clients’ growth through transparency and professionalism.</p>
-
-          <div class="about-stats">
-            <div class="stat-item"><h3 class="counter" data-target="500+">0</h3><p>Happy Clients</p></div>
-            <div class="stat-item"><h3 class="counter" data-target="1000+">0</h3><p>Projects Completed</p></div>
-            <div class="stat-item"><h3 class="counter" data-target="6+">0</h3><p>Years Experience</p></div>
-          </div>
-        </div>
-        <div class="about-image">
-          <img src="images/company-office.jpg" alt="FREELANCER AMIT Office" class="about-photo">
-        </div>
+        <article class="info-card">
+          <h3>Our Promise</h3>
+          <p>Transparent pricing, timely filings, and hands-on support — every time.</p>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Founder Profile -->
-  <section class="founder-profile">
-    <div class="container">
-      <h2 class="section-title">Meet Our Founder</h2>
-      <div class="founder-content">
-        <div class="founder-image">
-          <img src="images/Amit-panda.jpg" alt="FREELANCER AMIT - Founder" class="founder-photo">
-        </div>
-        <div class="founder-details">
-          <h3>Amit Kumar Panda</h3>
-          <p class="designation">Founder & Principal Consultant | Commerce Graduate | CA & CMA Pursuing | Registered GST Practitioner</p>
+    <!-- Founder -->
+    <section class="centered container founder-section reveal">
+      <div class="founder-card">
+        <figure class="founder-photo" role="img" aria-label="Amit — Founder">
+          <!-- replace src with real photo path -->
+          <img src="images/Amit-panda.jpg" alt="Amit — Founder" />
+        </figure>
 
-          <p>Amit is a qualified accounting professional with over 3 years of experience in taxation, GST, MCA compliance, and financial management. He specializes in helping businesses maintain statutory compliance while achieving operational efficiency and financial clarity.</p>
+        <div class="founder-content">
+          <h2>Amit — Founder</h2>
+          <p class="founder-bio">
+            Amit is a dedicated accounting professional with 3+ years of hands-on experience across taxation, MCA compliance,
+            GST services and financial compliance. A commerce graduate currently pursuing CA & CMA, Amit combines technical
+            acumen with practical insight to deliver accurate filings and pragmatic financial advice.
+          </p>
 
-          <p>He combines a strong academic background with hands-on experience in audit, accounting, taxation, and business consulting. His goal is to simplify complex financial challenges and deliver measurable results that enhance business growth.</p>
+          <ul class="founder-meta">
+            <li><strong>Experience:</strong> 3+ years (Taxation, GST, MCA, ITR)</li>
+            <li><strong>Qualifications:</strong> Commerce Graduate — CA & CMA (in progress) — Registered GST Practitioner</li>
+            <li><strong>Contact:</strong> +91 7653047026 • amitfreelancer.services@gmail.com</li>
+          </ul>
 
-          <p>Under his leadership, FREELANCER AMIT has become a trusted name for professional integrity, timely service, and personalized support to clients across various industries.</p>
-
-          <div class="qualifications">
-            <h4>Professional Qualifications:</h4>
-            <ul>
-              <li><i class="fas fa-check"></i> Commerce Graduate</li>
-              <li><i class="fas fa-check"></i> Pursuing CA (Chartered Accountancy)</li>
-              <li><i class="fas fa-check"></i> Pursuing CMA (Cost Management Accounting)</li>
-              <li><i class="fas fa-check"></i> Registered GST Practitioner (GSTP)</li>
-            </ul>
-          </div>
-
-          <div class="expertise">
-            <h4>Areas of Expertise:</h4>
-            <ul>
-              <li><i class="fas fa-star"></i> Taxation & GST Compliance</li>
-              <li><i class="fas fa-star"></i> MCA Filing & Business Registration</li>
-              <li><i class="fas fa-star"></i> Accounting & Audit Support</li>
-              <li><i class="fas fa-star"></i> Financial Consulting & Advisory</li>
-              <li><i class="fas fa-star"></i> TDS, Payroll & Statutory Management</li>
-            </ul>
+          <div class="founder-cta">
+            <a href="contact.html" class="btn btn-primary">Schedule Consultation</a>
+            <a href="services.html" class="btn btn-outline">Our Services</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Team Members -->
-  <section class="team-section">
-    <div class="container">
-      <h2 class="section-title">Our Professional Team</h2>
-      <p class="section-intro">Meet the dedicated professionals working alongside our founder to deliver excellence in every project.</p>
+    <!-- Stats -->
+    <section class="centered container stats-section reveal">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-number" data-target="500">0</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number" data-target="1200">0</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number" data-target="6">0</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team / Partners -->
+    <section class="centered container team-section reveal">
+      <h2 class="section-title">Partners & Team</h2>
+      <p class="subtle">Small, skilled team and trusted partners — available when you need them.</p>
 
       <div class="team-grid">
-        <div class="team-member">
-          <img src="images/team1.jpg" alt="CA Partner" class="team-photo">
-          <h3>CA Priya Sharma</h3>
-          <p class="role">Senior Partner - Tax & Audit</p>
-          <p>Priya is a Chartered Accountant with over 5 years of experience in taxation, audits, and compliance advisory. She leads the firm’s audit and assurance operations with precision and professionalism.</p>
-        </div>
+        <!-- demo profile 1 -->
+        <article class="team-card">
+          <img src="images/demo-1.jpg" alt="Riya - Tax Specialist" />
+          <h4>Riya Sharma</h4>
+          <p class="role">Tax Specialist</p>
+          <p class="mini">2+ years in direct tax filing and TDS management. Expert in ITR & TDS reconciliation.</p>
+        </article>
 
-        <div class="team-member">
-          <img src="images/team2.jpg" alt="Finance Expert" class="team-photo">
-          <h3>Rahul Verma</h3>
-          <p class="role">Manager - Finance & Compliance</p>
-          <p>Rahul brings deep expertise in corporate finance, TDS management, and ROC filing. He ensures all client processes meet statutory standards and deadlines.</p>
-        </div>
+        <!-- demo profile 2 -->
+        <article class="team-card">
+          <img src="images/demo-2.jpg" alt="Sanjay - MCA Specialist" />
+          <h4>Sanjay Patel</h4>
+          <p class="role">MCA & Compliance</p>
+          <p class="mini">Experienced in ROC filings, annual returns and corporate governance support.</p>
+        </article>
 
-        <div class="team-member">
-          <img src="images/team3.jpg" alt="Support Executive" class="team-photo">
-          <h3>Ankita Das</h3>
-          <p class="role">Client Relationship Executive</p>
-          <p>Ankita manages client communications, support requests, and coordination, ensuring smooth service delivery and client satisfaction.</p>
-        </div>
+        <!-- demo profile 3 -->
+        <article class="team-card">
+          <img src="images/demo-3.jpg" alt="Nidhi - Designer" />
+          <h4>Nidhi K</h4>
+          <p class="role">Design & Branding</p>
+          <p class="mini">Poster, flyer and banner design specialist — print + digital creatives.</p>
+        </article>
+
+        <!-- demo profile 4 -->
+        <article class="team-card">
+          <img src="images/demo-4.jpg" alt="Rohit - Web Dev" />
+          <h4>Rohit Verma</h4>
+          <p class="role">Web Developer</p>
+          <p class="mini">Front-end & WordPress developer building responsive and fast websites.</p>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Core Values -->
-  <section class="company-values">
-    <div class="container">
+    <!-- Core Values (cards) -->
+    <section class="centered container values-section reveal">
       <h2 class="section-title">Our Core Values</h2>
       <div class="values-grid">
-        <div class="value-card"><i class="fas fa-handshake value-icon"></i><h3>Integrity</h3><p>We uphold honesty, transparency, and ethical conduct in every client relationship.</p></div>
-        <div class="value-card"><i class="fas fa-lightbulb value-icon"></i><h3>Innovation</h3><p>We embrace new technologies and smart solutions for evolving client needs.</p></div>
-        <div class="value-card"><i class="fas fa-users value-icon"></i><h3>Client Focus</h3><p>Your success is our priority. We deliver with precision and care.</p></div>
-        <div class="value-card"><i class="fas fa-award value-icon"></i><h3>Excellence</h3><p>We strive to exceed expectations with every service and deliverable.</p></div>
-      </div>
-    </div>
-  </section>
+        <div class="value-card">
+          <i class="fas fa-handshake"></i>
+          <h4>Integrity</h4>
+          <p>We act ethically and transparently in all engagements.</p>
+        </div>
 
-  <!-- Call to Action -->
-  <section class="cta">
-    <div class="container">
-      <h2>Ready to Work with Us?</h2>
-      <p>Let's discuss how we can help your business grow and succeed.</p>
-      <a href="contact.html" class="btn btn-primary">Get Started Today</a>
-    </div>
-  </section>
+        <div class="value-card">
+          <i class="fas fa-lightbulb"></i>
+          <h4>Innovation</h4>
+          <p>Constant improvement — smarter, simpler solutions for clients.</p>
+        </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>FREELANCER AMIT</h3>
-          <p>Professional Business Services</p>
+        <div class="value-card">
+          <i class="fas fa-user-friends"></i>
+          <h4>Client Focus</h4>
+          <p>Your success drives our decisions and service approach.</p>
         </div>
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="gst-services.html">GST Filing</a></li>
-            <li><a href="mca-compliance.html">MCA Compliance</a></li>
-            <li><a href="itr-filing.html">ITR Filing</a></li>
-            <li><a href="services.html">Business Services</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Contact Info</h4>
-          <p><i class="fas fa-phone"></i> +91 7749951944</p>
-          <p><i class="fas fa-envelope"></i> extrabenefit1@gmail.com</p>
-          <p><i class="fas fa-map-marker-alt"></i> 436, Lane 4, Nuasahi, Nayapalli, Bhubaneswar, Odisha - 751012</p>
+
+        <div class="value-card">
+          <i class="fas fa-award"></i>
+          <h4>Excellence</h4>
+          <p>Quality and accuracy are non-negotiable.</p>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 FREELANCER AMIT - Professional Business Services. All rights reserved. | Designed by Amit with ❤️</p>
+    </section>
+
+    <!-- CTA -->
+    <section class="centered container final-cta reveal">
+      <h2>Want to work together?</h2>
+      <p>Get in touch and we'll prepare a tailored compliance & advisory plan for your business.</p>
+      <div class="cta-row">
+        <a href="contact.html" class="btn btn-primary large">Contact Us</a>
+        <a href="services.html" class="btn btn-outline large">View Services</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner centered container">
+      <div class="footer-left">
+        <h3>FREELANCER AMIT</h3>
+        <p>Professional Business Services — GST, MCA, ITR & Consulting</p>
+      </div>
+      <div class="footer-right">
+        <p>Phone: +91 7653047026 • Email: amitfreelancer.services@gmail.com</p>
+        <p class="muted">&copy; 2025 FREELANCER AMIT. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // hamburger toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+      navMenu.classList.toggle('open');
+      hamburger.classList.toggle('is-active');
+    });
+
+    // reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(r => revealObserver.observe(r));
+
+    // counters
+    const counters = document.querySelectorAll('.stat-number');
+    counters.forEach(counter => {
+      const target = +counter.dataset.target;
+      let current = 0;
+      const step = Math.max(1, Math.ceil(target / 120));
+      const interval = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          counter.textContent = target + (target >= 100 ? '+' : '');
+          clearInterval(interval);
+        } else {
+          counter.textContent = current;
+        }
+      }, 10);
+    });
+  </script>
 </body>
 </html>
