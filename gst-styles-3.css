@@ -421,3 +421,89 @@ body {
   transform: scale(1.05);
   box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
 }
+/* --- Fix layout alignment and spacing for MCA sections --- */
+
+/* Section titles centered globally */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Center the grid containers */
+.calendar-grid,
+.types-grid,
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+}
+
+/* Card style alignment */
+.calendar-card,
+.type-card,
+.feature {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+  width: 280px;
+  min-height: 250px;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Glow hover effect */
+.calendar-card:hover,
+.type-card:hover,
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px #ffd700, 0 0 60px #00ffff;
+}
+
+/* Icons bigger and colorful */
+.calendar-icon i,
+.type-icon i,
+.feature-icon i {
+  font-size: 35px;
+  color: #00ffff;
+  margin-bottom: 15px;
+}
+
+/* List items neatly centered */
+.calendar-card ul,
+.type-card ul,
+.service-features ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.calendar-card ul li,
+.type-card ul li {
+  color: #ddd;
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+/* Add space between sections */
+.mca-calendar,
+.company-types,
+.why-choose-mca {
+  padding: 80px 0;
+}
+
+/* Responsive fix */
+@media (max-width: 768px) {
+  .calendar-card,
+  .type-card,
+  .feature {
+    width: 90%;
+  }
+}
