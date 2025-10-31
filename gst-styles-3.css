@@ -507,3 +507,47 @@ body {
     width: 90%;
   }
 }
+/* ===== Glowing Effect for ITR Process Steps ===== */
+.itr-process .process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.itr-process .step {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 25px;
+    width: 260px;
+    text-align: center;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
+}
+
+.itr-process .step:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 170, 0.6), 0 0 50px rgba(0, 120, 255, 0.5);
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.itr-process .step-number {
+    font-size: 28px;
+    color: #00ffd1;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 200, 0.4);
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .itr-process .step {
+        width: 90%;
+    }
+}
