@@ -1,7 +1,7 @@
-/* ===========================
-   ABOUT PAGE STYLES
-   FREELANCER AMIT
-   =========================== */
+/* ======================================================
+   ABOUT PAGE - PREMIUM COLORFUL STYLE
+   Designed for FREELANCER AMIT | Animated, Modern, Centered
+   ====================================================== */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
@@ -13,165 +13,184 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  color: #222;
-  background: #f7f8fa;
-  line-height: 1.7;
+  background: linear-gradient(120deg, #1a73e8, #8e2de2, #ff6a00);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
 }
 
-/* ---------- Header Section ---------- */
+/* ================= Header ================= */
 .page-header {
-  background: linear-gradient(135deg, #005bea, #00c6fb);
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
-  animation: fadeInDown 1s ease;
+  padding: 90px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  animation: fadeDown 1.5s ease;
 }
 
 .page-header h1 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ffffff, #00e6ff, #fff176);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .page-header p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  opacity: 0.9;
   margin-top: 10px;
 }
 
-/* ---------- About Overview ---------- */
+/* ================= Overview ================= */
 .about-overview {
-  background: #fff;
-  padding: 80px 20px;
-  text-align: center;
-  animation: fadeInUp 1.2s ease;
+  padding: 100px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeUp 2s ease;
 }
 
 .about-overview h2 {
-  font-size: 2.2rem;
-  color: #005bea;
+  font-size: 2.5rem;
+  font-weight: 600;
   margin-bottom: 20px;
+  background: linear-gradient(90deg, #ffb400, #00ffcc, #00b3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .about-overview p {
-  max-width: 900px;
-  margin: 0 auto;
-  color: #555;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  line-height: 1.8;
 }
 
-/* ---------- Vision & Mission ---------- */
+/* ================= Vision & Mission ================= */
 .vm-section {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 80px 20px;
-  background: linear-gradient(120deg, #e8f0ff, #ffffff);
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 100px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 30px;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 1000px;
+  animation: fadeIn 2.5s ease;
 }
 
 .vm-card {
-  flex: 1 1 400px;
-  background: #fff;
+  background: linear-gradient(145deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
   padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 20px;
+  max-width: 600px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
 }
 
 .vm-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 91, 234, 0.2);
+  transform: translateY(-10px) scale(1.03);
+  background: linear-gradient(145deg, rgba(255,255,255,0.25), rgba(255,255,255,0.08));
 }
 
-.vm-card h3 {
-  color: #005bea;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-}
-
-.vm-card p {
-  color: #555;
-}
-
-/* ---------- Founder Section ---------- */
+/* ================= Founder Section ================= */
 .founder-section {
-  background: #fff;
-  padding: 100px 20px;
-  text-align: center;
+  padding: 120px 20px;
+  position: relative;
+}
+
+.founder-section::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.1), transparent 70%);
+  z-index: -1;
 }
 
 .founder-section h2 {
-  font-size: 2.4rem;
-  color: #005bea;
+  font-size: 2.6rem;
   margin-bottom: 50px;
-  animation: fadeIn 1s ease;
+  background: linear-gradient(90deg, #fff, #00ffea, #ffea00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: floatText 5s ease-in-out infinite;
 }
 
 .founder-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 50px;
 }
 
 .founder-card {
-  background: linear-gradient(145deg, #ffffff, #f3f3f3);
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
   padding: 40px;
-  width: 320px;
-  text-align: center;
+  width: 300px;
   transition: all 0.4s ease;
-  box-shadow: 0 8px 20px rgba(0, 91, 234, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeInScale 2.5s ease;
 }
 
 .founder-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(0, 91, 234, 0.2);
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
 }
 
 .founder-card img {
-  width: 130px;
-  height: 130px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #005bea;
-  margin-bottom: 20px;
-  transition: transform 0.4s ease;
+  border: 3px solid #fff;
+  margin-bottom: 15px;
+  transition: all 0.5s ease;
 }
 
 .founder-card:hover img {
-  transform: rotate(5deg);
+  transform: rotate(8deg) scale(1.1);
 }
 
 .founder-card h3 {
-  color: #222;
   font-size: 1.4rem;
-  margin-bottom: 5px;
+  font-weight: 600;
+  color: #fff;
 }
 
 .founder-card span {
-  color: #005bea;
+  color: #00ffcc;
+  display: block;
+  margin-top: 5px;
   font-weight: 500;
-  font-size: 0.95rem;
 }
 
 .founder-card p {
-  color: #555;
   font-size: 0.95rem;
+  color: #eee;
   margin-top: 10px;
 }
 
-/* ---------- Partners & Team ---------- */
+/* ================= Team Section ================= */
 .team-section {
-  background: linear-gradient(135deg, #005bea, #00c6fb);
-  padding: 80px 20px;
-  color: white;
-  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #ff6a00, #ee0979, #00c6ff);
+  background-size: 300% 300%;
+  animation: gradientShift 10s infinite;
 }
 
 .team-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 40px;
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 50px;
 }
 
 .team-grid {
@@ -182,18 +201,17 @@ body {
 }
 
 .team-member {
-  background: white;
-  color: #333;
-  border-radius: 16px;
-  width: 260px;
-  padding: 25px;
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  width: 250px;
+  padding: 30px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
 }
 
 .team-member:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .team-member img {
@@ -201,44 +219,60 @@ body {
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #00c6fb;
-  margin-bottom: 15px;
+  border: 3px solid #fff;
+  margin-bottom: 10px;
 }
 
 .team-member h4 {
-  color: #005bea;
   font-size: 1.2rem;
+  color: #fff;
 }
 
 .team-member span {
   font-size: 0.9rem;
-  color: #777;
+  color: #ffe;
 }
 
-/* ---------- Animation Keyframes ---------- */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ================= Animations ================= */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-@keyframes fadeInDown {
+@keyframes fadeDown {
   from { opacity: 0; transform: translateY(-40px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeInUp {
+@keyframes fadeUp {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ---------- Responsive ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatText {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ================= Responsive ================= */
 @media (max-width: 768px) {
-  .founder-container, .team-grid, .vm-section {
+  .founder-container, .team-grid {
     flex-direction: column;
     align-items: center;
   }
 
-  .founder-card, .vm-card {
+  .vm-card, .founder-card, .team-member {
     width: 90%;
   }
 }
