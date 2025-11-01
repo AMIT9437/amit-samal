@@ -424,3 +424,31 @@ body{padding-top:72px} /* matches your header height to avoid overlap on mobile 
     gap: 16px;
   }
 }
+/* PART 3 CSS additions */
+
+/* Hover glow effect for neon cards */
+.neon-card.neon-hover {
+  transform: translateY(-6px) scale(1.01);
+  transition: transform 300ms cubic-bezier(.2,.9,.26,1), box-shadow 300ms ease;
+  box-shadow: 0 18px 50px rgba(124,58,237,0.12), 0 6px 30px rgba(14,165,164,0.06);
+}
+
+/* Make reveal use translateY for stagger effect consistency */
+.reveal { transform: translateY(20px); opacity:0 }
+.reveal.in-view { transform: translateY(0); opacity:1 }
+
+/* Ensure hero parallax transform doesn't break layout */
+.about-hero { will-change: transform }
+
+/* Better safe padding for tiny phones to avoid cut text */
+@media (max-width:360px){
+  .container { padding-left:18px; padding-right:18px }
+  h1 { font-size:1.35rem }
+  .about-hero-text { font-size:0.95rem }
+}
+
+/* Make nav links easier to tap on mobile */
+.nav-menu .nav-link { padding:10px 12px }
+
+/* Ensure dropdown menu stays fully visible on small screens */
+.dropdown-menu { max-width:260px; word-break:break-word }
