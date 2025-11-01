@@ -1,493 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — Freelancer Amit — GST • TAX • MCA</title>
-  <meta name="description" content="About Freelancer Amit — Tax, GST, MCA & Compliance consultancy (Bhubaneswar). Transparent, reliable and modern compliance services." />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#f7f9fb;
-      --card:#ffffff;
-      --text:#0b1220;
-      --muted:#556067;
-      --accent1:#3b82f6; /* blue */
-      --accent2:#7c3aed; /* purple */
-      --accent3:#ec4899; /* pink */
-      --glass: rgba(11,18,32,0.03);
-      --maxw:1100px;
-      --radius:12px;
-      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-
-    /* Base reset */
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.55}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;height:auto;display:block}
-    .container{max-width:var(--maxw);margin:0 auto;padding:1rem}
-
-    /* OLD HEADER (keeps markup same as your site) but upgraded/sticky */
-    nav.navbar{position:fixed;top:0;left:0;right:0;z-index:200;background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.90));backdrop-filter: blur(6px);border-bottom:1px solid rgba(11,18,32,0.06)}
-    .nav-container{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0.9rem 1rem}
-    .nav-logo h2{margin:0;font-size:1.05rem;letter-spacing:0.6px;font-weight:700}
-    .nav-logo span{display:block;font-size:0.78rem;color:var(--muted);margin-top:2px}
-    .nav-menu{list-style:none;display:flex;gap:1rem;margin:0;padding:0;align-items:center}
-    .nav-item .nav-link{color:var(--muted);padding:0.45rem 0.65rem;border-radius:8px;font-weight:600}
-    .nav-link.active{color:var(--card);background:linear-gradient(90deg,var(--accent1),var(--accent2));box-shadow:0 8px 20px rgba(124,58,237,0.08)}
-    .dropdown-menu{position:absolute;background:var(--card);padding:0.4rem;border-radius:8px;margin-top:0.6rem;display:none;box-shadow:0 10px 30px rgba(11,18,32,0.08)}
-    .nav-item.dropdown{position:relative}
-    .nav-item.dropdown:hover .dropdown-menu{display:block}
-
-    /* hamburger */
-    .hamburger{display:none;cursor:pointer;width:44px;height:40px;align-items:center;justify-content:center;border-radius:8px}
-    .hamburger .bar{display:block;width:22px;height:2px;background:var(--text);margin:4px 0;transition:transform .25s ease,opacity .2s ease}
-    .hamburger.active .bar:nth-child(1){transform:translateY(6px) rotate(45deg)}
-    .hamburger.active .bar:nth-child(2){opacity:0}
-    .hamburger.active .bar:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-
-    /* HERO with animated gradient background (subtle, light-themed) */
-    .hero-wrap{padding-top:84px;background:linear-gradient(135deg,var(--accent1),var(--accent2),var(--accent3));background-size:300% 300%;animation:gradientShift 15s ease infinite;}
-    @keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-    .hero{padding:3.2rem 0}
-    .hero-inner{display:grid;grid-template-columns:1fr;gap:1rem;padding:0 1rem}
-    .eyebrow{display:inline-block;background:rgba(255,255,255,0.85);padding:0.25rem 0.6rem;border-radius:999px;font-weight:700;color:var(--text);font-size:0.82rem}
-    .hero-title{font-size:1.8rem;margin:0.6rem 0;color:rgba(255,255,255,0.98);font-weight:700}
-    .hero-sub{color:rgba(255,255,255,0.95);margin:0 0 1rem}
-    .hero-cta{display:flex;gap:0.6rem;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 0.9rem;border-radius:10px;font-weight:700}
-    .btn-primary{background:var(--card);color:var(--text);box-shadow:0 12px 30px rgba(11,18,32,0.08)}
-    .btn-outline{border:1px solid rgba(255,255,255,0.28);color:rgba(255,255,255,0.92);background:transparent}
-
-    /* white content card overlapping hero for contrast */
-    .hero-card{background:var(--card);color:var(--text);padding:1rem;border-radius:12px;box-shadow:0 8px 30px rgba(11,18,32,0.06);margin-top:1rem}
-    .stats{display:flex;gap:1rem;align-items:center}
-    .stat-number{font-weight:800;font-size:1.2rem}
-    .stat-label{color:var(--muted);font-size:0.9rem}
-
-    /* Sections - light backgrounds with subtle gradients */
-    section{padding:2.4rem 0}
-    .section .container{padding-left:1rem;padding-right:1rem}
-    .section-title{font-size:1.05rem;margin:0 0 0.6rem;font-weight:700}
-    .lead-muted{color:var(--muted)}
-
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-    .card{background:var(--card);padding:1rem;border-radius:10px;border:1px solid rgba(11,18,32,0.04)}
-
-    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-    .process-step{background:linear-gradient(180deg, rgba(11,18,32,0.02), rgba(11,18,32,0.01));padding:1rem;border-radius:10px;text-align:center}
-    .step-num{width:38px;height:38px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2));display:grid;place-items:center;font-weight:700;color:#fff;margin:0 auto 0.6rem}
-
-    /* Team grid */
-    .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-    .profile{padding:1rem;background:var(--card);border-radius:10px;text-align:center}
-    .avatar{width:72px;height:72px;border-radius:999px;margin:0 auto 0.6rem;background:linear-gradient(90deg,var(--accent1),var(--accent2));display:grid;place-items:center;color:#fff;font-weight:700}
-
-    /* Testimonials */
-    .testimonials{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-    blockquote{margin:0;padding:1rem;background:linear-gradient(180deg, rgba(59,130,246,0.04), rgba(124,58,237,0.03));border-left:4px solid rgba(59,130,246,0.2);border-radius:8px}
-
-    /* FAQ */
-    details{background:var(--card);padding:0.9rem;border-radius:8px;margin-bottom:0.6rem;border:1px solid rgba(11,18,32,0.03)}
-    summary{cursor:pointer;font-weight:700}
-
-    /* CTA */
-    .cta{display:flex;justify-content:space-between;align-items:center;padding:1rem;border-radius:10px;background:linear-gradient(90deg, rgba(59,130,246,0.06), rgba(124,58,237,0.04));border:1px solid rgba(11,18,32,0.03)}
-
-    /* FOOTER uses old footer content but styled */
-    footer.footer{background:transparent;padding:2rem 0;color:var(--muted);border-top:1px solid rgba(11,18,32,0.04)}
-    .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
-
-    /* Small screens / Mobile-first adjustments */
-    @media (max-width:1000px){
-      .grid-3{grid-template-columns:repeat(2,1fr)}
-      .team-grid{grid-template-columns:repeat(2,1fr)}
-      .process{grid-template-columns:repeat(2,1fr)}
-      .nav-menu{display:none}
-      .hamburger{display:flex}
-      .hero-title{font-size:1.35rem}
-    }
-    @media (max-width:640px){
-      .grid-3{grid-template-columns:1fr}
-      .testimonials{grid-template-columns:1fr}
-      .footer-grid{grid-template-columns:1fr}
-      .process{grid-template-columns:1fr}
-      .team-grid{grid-template-columns:1fr}
-      .hero-inner{padding:0}
-      .hero{padding:2rem 0}
-      .hero-card{margin-top:0.8rem}
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | FREELANCER AMIT</title>
+    <meta name="description" content="Know more about Amit Kumar Das – GST & Tax Consultant from Bhubaneswar, Odisha. Providing GST, ITR, MCA, Business Registration and Compliance Support.">
+    <link rel="stylesheet" href="about-styles-1.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- INSERT OLD HEADER MARKUP (from your original page) -->
+<!-- Navigation (Same as Home Page) -->
 <nav class="navbar">
-  <div class="nav-container">
-    <div class="nav-logo">
-      <h2>FREELANCER AMIT</h2>
-      <span>Professional Business Services</span>
-    </div>
+    <div class="nav-container">
+        <div class="nav-logo">
+            <h2>FREELANCER AMIT</h2>
+            <span>Business • Tax • Compliance</span>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+            
+            <li class="nav-item dropdown">
+                <a href="services.html" class="nav-link">Services ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="itr-filing.html" class="nav-link">ITR Filing</a></li>
+                    <li><a href="gst-services.html" class="nav-link">GST Services</a></li>
+                    <li><a href="mca-compliance.html" class="nav-link">MCA Compliance</a></li>
+                </ul>
+            </li>
 
-    <ul class="nav-menu">
-      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-      <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
-      <li class="nav-item dropdown">
-        <a href="services.html" class="nav-link">Services ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="itr-filing.html">ITR Filing</a></li>
-          <li><a href="gst-services.html">GST Services</a></li>
-          <li><a href="mca-compliance.html">MCA Compliance</a></li>
-          <li><a href="website-management.html">Website Services</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
-      </li>
-      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-    </ul>
 
-    <div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
     </div>
-  </div>
 </nav>
 
-<!-- HERO with animated gradient background -->
-<section class="hero-wrap">
-  <div class="container hero">
-    <div class="hero-inner">
-      <div>
-        <span class="eyebrow">Trusted Compliance Partner</span>
-        <h1 class="hero-title">Freelancer Amit — Modern Tax, GST & MCA Support</h1>
-        <p class="hero-sub">Smart, transparent and reliable compliance services crafted for MSMEs, startups and professionals. We combine practical experience with modern tools to save you time, reduce risk and keep your business compliant.</p>
-
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="contact.html"><i class="fa-solid fa-comments"></i> Request Consultation</a>
-          <a class="btn btn-outline" href="tel:+917653047026"><i class="fa-solid fa-phone"></i> Call +91 7653047026</a>
+<!-- HERO SECTION with Animated Gradient + Your Pic -->
+<section class="about-hero">
+    <div class="about-hero-container">
+        <div class="about-hero-text">
+            <h1>About <span class="highlight">Amit Kumar Das</span></h1>
+            <p>Your trusted partner in <strong>Business, Tax & Compliance</strong>. Helping individuals, startups, and businesses simplify GST, ITR, MCA, and legal compliance with accuracy & responsibility.</p>
         </div>
-
-        <div class="hero-card" style="max-width:520px">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div>
-              <div class="stat-number">3+</div>
-              <div class="stat-label">Years Experience</div>
-            </div>
-            <div>
-              <div class="stat-number">100+</div>
-              <div class="stat-label">Clients Served</div>
-            </div>
-          </div>
+        <div class="about-hero-image">
+            <img src="amit.jpg" alt="Amit Kumar Das">
         </div>
-      </div>
-
     </div>
-  </div>
 </section>
 
-<main>
-  <section>
+<!-- WHO AM I -->
+<section class="about-section">
     <div class="container">
-      <h3 class="section-title">Our Philosophy & Approach</h3>
-      <p class="lead-muted">We believe compliance should be clear, affordable and tailored. Our approach combines regulatory know-how, practical suggestions and timely execution so you always remain confident about your financial obligations.</p>
-
-      <div style="margin-top:1rem" class="grid-3">
-        <div class="card">
-          <h4>Client-first advisory</h4>
-          <p class="lead-muted">We prioritise your business goals and suggest compliance solutions that support growth, not just filings.</p>
-        </div>
-        <div class="card">
-          <h4>Modern & Responsive</h4>
-          <p class="lead-muted">Fast support via WhatsApp, phone and email. Clear timelines and prompt execution.</p>
-        </div>
-        <div class="card">
-          <h4>Accuracy & Care</h4>
-          <p class="lead-muted">Attention to detail and careful documentation reduce audits and penalties.</p>
-        </div>
-      </div>
+        <h2 class="section-title">Who Am I?</h2>
+        <p class="section-text">
+            I’m <strong>Amit Kumar Das</strong>, a dedicated <strong>Tax & Compliance Consultant</strong> based in Bhubaneswar, Odisha.  
+            With a background in Commerce (<strong>B.Com</strong>) and currently pursuing both <strong>CA & CMA</strong>, I bring practical knowledge, discipline, and analytical thinking into business compliance and taxation services.
+        </p>
+        <p class="section-text">
+            Over the past <strong>3+ years</strong>, I’ve worked with individuals, freelancers, small businesses, private limited companies, and startups — helping them stay compliant, legally protected, and financially organized.
+        </p>
     </div>
-  </section>
+</section>
 
-  <section style="background:linear-gradient(180deg, rgba(59,130,246,0.03), rgba(124,58,237,0.02));">
+<!-- MISSION, VISION, APPROACH -->
+<section class="about-grid">
     <div class="container">
-      <h3 class="section-title">Why Choose Freelancer Amit</h3>
-      <p class="lead-muted">A practical, relationship-driven partner who handles the technical work while keeping you informed and empowered.</p>
-
-      <div style="margin-top:1rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:stretch">
-        <div style="flex:1;min-width:240px;background:var(--card);padding:1rem;border-radius:10px;border:1px solid rgba(11,18,32,0.04)">
-          <h4 style="margin-top:0">What you get</h4>
-          <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
-            <li>Clear pricing and upfront estimates</li>
-            <li>Personalised compliance calendar</li>
-            <li>Fast responses and ongoing support</li>
-            <li>Secure handling of documents</li>
-          </ul>
+        <div class="grid-box">
+            <i class="fas fa-bullseye"></i>
+            <h3>My Mission</h3>
+            <p>To make business compliance simple, transparent, and stress-free for everyone — from new entrepreneurs to established businesses.</p>
         </div>
-        <div style="flex:1;min-width:240px;background:linear-gradient(90deg, rgba(124,58,237,0.06), rgba(59,130,246,0.04));padding:1rem;border-radius:10px;border:1px solid rgba(11,18,32,0.03);color:var(--text)">
-          <h4 style="margin-top:0">How we stand out</h4>
-          <ul style="margin:0;padding-left:1.1rem;color:var(--text)">
-            <li>Practical advice that reduces tax & compliance friction</li>
-            <li>Tech-friendly processes for quick deliverables</li>
-            <li>Industry-aware guidance for MSMEs & startups</li>
-            <li>Continuous improvement & learning</li>
-          </ul>
+        <div class="grid-box">
+            <i class="fas fa-eye"></i>
+            <h3>My Vision</h3>
+            <p>To become a trusted and result-oriented compliance partner known for honesty, accuracy, and long-term client relationships.</p>
         </div>
-      </div>
+        <div class="grid-box">
+            <i class="fas fa-chart-line"></i>
+            <h3>My Working Approach</h3>
+            <p>Simple process, timely updates, clear communication, and complete confidentiality in every service delivered.</p>
+        </div>
     </div>
-  </section>
+</section>
 
-  <section>
+<!-- WHY CHOOSE ME -->
+<section class="why-me">
     <div class="container">
-      <h3 class="section-title">How We Work — Simple 4-step Process</h3>
-      <div style="margin-top:1rem" class="process">
-        <div class="process-step">
-          <div class="step-num">1</div>
-          <h4 style="margin:0">Connect</h4>
-          <p class="lead-muted" style="margin-top:0.5rem">Share requirements & documents through a secure channel.</p>
+        <h2 class="section-title">Why Clients Choose Me</h2>
+        <div class="features-grid">
+            <div class="feature"><i class="fas fa-user-check"></i><h3>Registered GST Practitioner</h3><p>Authorized to handle GST compliance legally & professionally.</p></div>
+            <div class="feature"><i class="fas fa-clock"></i><h3>On-Time & Reliable</h3><p>Every task completed before deadline, with proper documentation.</p></div>
+            <div class="feature"><i class="fas fa-shield-alt"></i><h3>Honest & Transparent</h3><p>No hidden fees — clear pricing and genuine guidance.</p></div>
+            <div class="feature"><i class="fas fa-headset"></i><h3>Dedicated Support</h3><p>Available for queries, updates & clarification whenever needed.</p></div>
+            <div class="feature"><i class="fas fa-briefcase"></i><h3>Professional Expertise</h3><p>Knowledge backed by CA & CMA training + real client experience.</p></div>
         </div>
-        <div class="process-step">
-          <div class="step-num">2</div>
-          <h4 style="margin:0">Assess & Plan</h4>
-          <p class="lead-muted" style="margin-top:0.5rem">We review your case and present a clear plan, timeline & price.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">3</div>
-          <h4 style="margin:0">Execute</h4>
-          <p class="lead-muted" style="margin-top:0.5rem">Filing, reconciliations and required correspondence handled by us.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">4</div>
-          <h4 style="margin:0">Support</h4>
-          <p class="lead-muted" style="margin-top:0.5rem">Post-filing assistance, clarifications and proactive reminders.</p>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <section style="border-top:1px solid rgba(11,18,32,0.02);">
+<!-- CALL TO ACTION -->
+<section class="cta">
     <div class="container">
-      <h3 class="section-title">Services & Expertise</h3>
-      <p class="lead-muted">Comprehensive services for every stage of your business lifecycle.</p>
-
-      <div style="margin-top:1rem" class="grid-3">
-        <div class="card">
-          <h4>GST Services</h4>
-          <p class="lead-muted">Registration, monthly/quarterly returns, annual return, GSTR reconciliations and notices.</p>
-        </div>
-        <div class="card">
-          <h4>Income Tax & ITR</h4>
-          <p class="lead-muted">ITR filing, tax planning, revisions and responses to notices.</p>
-        </div>
-        <div class="card">
-          <h4>MCA / ROC Filings</h4>
-          <p class="lead-muted">Incorporation support, annual filings, director updates and ROC responses.</p>
-        </div>
-      </div>
-
-      <div style="margin-top:1rem" class="grid-3">
-        <div class="card">
-          <h4>Accounting & Payroll</h4>
-          <p class="lead-muted">Bookkeeping, payroll management, EPF/ESIC assistance & statements.</p>
-        </div>
-        <div class="card">
-          <h4>Startup & MSME Support</h4>
-          <p class="lead-muted">Entity selection, registrations, compliance calendar & funding-ready documents.</p>
-        </div>
-        <div class="card">
-          <h4>Digital & Advisory</h4>
-          <p class="lead-muted">Website templates, invoicing & basic digital presence to support your business.</p>
-        </div>
-      </div>
+        <h2>Want Hassle-Free Compliance & Filing?</h2>
+        <p>Let’s simplify your tax & business journey with expert support.</p>
+        <a href="contact.html" class="btn btn-primary">Contact Now</a>
     </div>
-  </section>
+</section>
 
-  <section style="background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.98));">
-    <div class="container">
-      <h3 class="section-title">Team & Professional Network</h3>
-      <p class="lead-muted">A compact team of specialist partners available for complex or larger assignments.</p>
-
-      <div style="margin-top:1rem" class="team-grid">
-        <div class="profile">
-          <div class="avatar">AK</div>
-          <h4 style="margin:0.5rem 0 0">Amit Kumar Das</h4>
-          <p class="lead-muted" style="margin:0.3rem 0 0">Tax & Compliance Consultant</p>
-        </div>
-
-        <div class="profile">
-          <div class="avatar">RS</div>
-          <h4 style="margin:0.5rem 0 0">Rina Sharma</h4>
-          <p class="lead-muted" style="margin:0.3rem 0 0">Tax Specialist</p>
-        </div>
-
-        <div class="profile">
-          <div class="avatar">SK</div>
-          <h4 style="margin:0.5rem 0 0">Suresh Kumar</h4>
-          <p class="lead-muted" style="margin:0.3rem 0 0">MCA & Corporate Filings</p>
-        </div>
-
-        <div class="profile">
-          <div class="avatar">ND</div>
-          <h4 style="margin:0.5rem 0 0">Nisha Patel</h4>
-          <p class="lead-muted" style="margin:0.3rem 0 0">Design & Digital Support</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <h3 class="section-title">Certifications & Credentials</h3>
-      <p class="lead-muted">Registered GST Practitioner & continuous learning in CA & CMA domains. We keep certifications and professional knowledge current to serve you better.</p>
-
-      <div style="margin-top:1rem" class="grid-3">
-        <div class="card"><strong>Registered GST Practitioner</strong><div class="lead-muted" style="margin-top:0.4rem">GST registration & authorized filings</div></div>
-        <div class="card"><strong>B.Com (Accounting)</strong><div class="lead-muted" style="margin-top:0.4rem">Formal commerce education</div></div>
-        <div class="card"><strong>CA & CMA (Pursuing)</strong><div class="lead-muted" style="margin-top:0.4rem">Ongoing professional qualifications</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section style="background:linear-gradient(90deg, rgba(59,130,246,0.03), rgba(124,58,237,0.02))">
-    <div class="container">
-      <h3 class="section-title">Client Feedback</h3>
-      <div style="margin-top:1rem" class="testimonials">
-        <blockquote>
-          "Very prompt and accurate. Helped us with GST reconciliation and reduced our compliance overheads."<footer style="margin-top:0.6rem;color:var(--muted)">— R. Mishra, Small Business</footer>
-        </blockquote>
-        <blockquote>
-          "Clear advice and timely filing. Recommended for freelancers and small enterprises."<footer style="margin-top:0.6rem;color:var(--muted)">— K. Singh, Startup Founder</footer>
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <h3 class="section-title">Frequently Asked Questions</h3>
-      <div style="margin-top:1rem">
-        <details>
-          <summary>How do I start with GST registration?</summary>
-          <p class="lead-muted">Share your business details and KYC. We’ll guide you through documents and complete the registration.
-          </p>
-        </details>
-
-        <details>
-          <summary>Can you handle MCA filings for my company?</summary>
-          <p class="lead-muted">Yes. We handle incorporation, annual returns, director changes and ROC responses end-to-end.</p>
-        </details>
-
-        <details>
-          <summary>What are your response times?</summary>
-          <p class="lead-muted">Typical responses within 24 hours on business days. Urgent tasks can be prioritised on request.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="cta">
-        <div>
-          <h3 style="margin:0">Ready to simplify compliance?</h3>
-          <p class="lead-muted" style="margin:0.4rem 0 0">Get a clear plan and fixed-cost estimate tailored for your business.</p>
-        </div>
-        <div style="display:flex;gap:0.6rem">
-          <a class="btn btn-primary" href="contact.html"><i class="fa-solid fa-paper-plane"></i> Request Consultation</a>
-          <a class="btn btn-outline" href="mailto:amitservices@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- ORIGINAL FOOTER (from your brother's page) -->
+<!-- FOOTER (Same as Home Page) -->
 <footer class="footer">
-  <div class="container">
-    <div class="footer-content" style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-start;justify-content:space-between">
-      <div class="footer-section" style="flex:1;min-width:200px">
-        <h3 style="margin:0">FREELANCER AMIT</h3>
-        <p style="margin-top:0.4rem">Professional Business Services — GST, MCA, ITR, Accounting & Digital</p>
-      </div>
-
-      <div class="footer-section" style="flex:1;min-width:200px">
-        <h4 style="margin:0">Contact</h4>
-        <p style="margin-top:0.4rem"><i class="fas fa-phone"></i> +91 7653047026</p>
-        <p><i class="fas fa-envelope"></i> amitservices@gmail.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> Flat No 214, Gomti Devi Residency, Rasulgarh, Bhubaneswar, Odisha - 751010</p>
-      </div>
-
-      <div class="footer-section" style="flex:1;min-width:200px">
-        <h4 style="margin:0">Quick Links</h4>
-        <ul style="margin:0;padding:0;list-style:none;margin-top:0.4rem;color:var(--muted)">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="privacy.html">Privacy</a></li>
-        </ul>
-      </div>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>FREELANCER AMIT</h3>
+                <p>Business • Tax • Compliance</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="gst-services.html">GST Filing</a></li>
+                    <li><a href="mca-compliance.html">MCA Compliance</a></li>
+                    <li><a href="itr-filing.html">ITR Filing</a></li>
+                    <li><a href="services.html">Business Consulting</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-phone"></i> +91 7749951944</p>
+                <p><i class="fas fa-envelope"></i> extrabenefit1@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Bhubaneswar, Odisha</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FREELANCER AMIT — All Rights Reserved | Designed with ❤️ by Amit</p>
+        </div>
     </div>
-
-    <div style="text-align:center;margin-top:1rem;color:var(--muted)">&copy; 2025 FREELANCER AMIT — All rights reserved. | Designed by Amit ❤️</div>
-  </div>
 </footer>
 
-<script>
-  // Hamburger toggle: mobile menu
-  (function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    if (!hamburger || !navMenu) return;
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      if (navMenu.style.display === 'flex'){
-        navMenu.style.display = '';
-      } else {
-        navMenu.style.display = 'flex';
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.gap = '0.6rem';
-        navMenu.style.background = 'linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.96))';
-        navMenu.style.padding = '0.8rem';
-        navMenu.style.position = 'absolute';
-        navMenu.style.right = '1rem';
-        navMenu.style.top = '64px';
-        navMenu.style.borderRadius = '10px';
-        navMenu.style.boxShadow = '0 12px 30px rgba(11,18,32,0.08)';
-      }
-    });
-    hamburger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') hamburger.click();
-    });
-  })();
-
-  // Small hero stat animation
-  (function () {
-    document.addEventListener('DOMContentLoaded', ()=>{
-      const elems = document.querySelectorAll('.stat-number');
-      elems.forEach(el=>{
-        const targetText = el.textContent.replace('+','').trim();
-        const target = parseInt(targetText) || 0;
-        let count = 0;
-        const step = Math.max(1, Math.floor(target / 40));
-        const interval = setInterval(()=>{
-          count += step;
-          if(count >= target){ el.textContent = target + '+'; clearInterval(interval);} else { el.textContent = count; }
-        },20);
-      });
-    });
-  })();
-
-  // Add sticky class on scroll for small shadow effect
-  (function(){
-    const nav = document.querySelector('.navbar');
-    window.addEventListener('scroll', ()=>{
-      if(window.scrollY > 10) nav.style.boxShadow = '0 6px 24px rgba(11,18,32,0.06)'; else nav.style.boxShadow = 'none';
-    });
-  })();
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
