@@ -148,3 +148,70 @@ contactCards.forEach(card => {
     card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     contactObserver.observe(card);
 });
+// PART 3 — Reveal + Hover Glow + Mobile menu improvements
+
+// 1) IntersectionObserver: add .in-view to .reveal elements (staggered)
+(function(){
+  const reveals = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) || reveals.length === 0){
+    // fallback: add in-view on load
+    reveals.forEach((el, i) => {
+      setTimeout(()=> el.classList.add('in-view'), i * 120);
+    });
+    return;
+  }
+
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        // optionally unobserve to avoid repeated triggers
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.12});
+
+  reveals.forEach((el) => io.observe(el));
+})();
+
+
+// 2) Mobile hamburger behaviour: close menu when a nav link is clicked
+(function(){
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+  if(hamburger && navMenu){
+    // toggle already present from earlier code — ensure links close menu
+    navMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        if(window.getComputedStyle(hamburger).display !== 'none'){
+          // mobile — hide menu & reset hamburger
+          navMenu.style.display = '';
+          hamburger.classList.remove('active');
+        }
+      });
+    });
+  }
+})();
+
+
+// 3) Optional subtle hero parallax (very light)
+(function(){
+  const hero = document.querySelector('.about-hero');
+  if(!hero) return;
+  window.addEventListener('scroll', () => {
+    const sc = window.scrollY;
+    // small translate for subtle depth
+    hero.style.transform = `translateY(${sc * 0.02}px)`;
+  }, {passive:true});
+})();
+
+
+// 4) Add small hover glow for neon cards on pointer devices
+(function(){
+  const supportsHover = window.matchMedia('(hover: hover)').matches;
+  if(!supportsHover) return;
+  document.querySelectorAll('.neon-card').forEach(card => {
+    card.addEventListener('mouseenter', () => card.classList.add('neon-hover'));
+    card.addEventListener('mouseleave', () => card.classList.remove('neon-hover'));
+  });
+})();
