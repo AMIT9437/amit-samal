@@ -1,369 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — FREELANCER AMIT - Business, Tax & Compliance</title>
-  <meta name="description" content="About Freelancer Amit — Tax, GST, MCA & Compliance consultancy (Bhubaneswar). Colourful, modern and trustworthy compliance services." />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <style>
-    :root{
-      --bg: linear-gradient(180deg,#f8fafc,#eef2ff);
-      --card:#ffffff;
-      --text:#0b1220;
-      --muted:#4b5563;
-      --accent1:#06b6d4; /* teal */
-      --accent2:#7c3aed; /* purple */
-      --accent3:#f97316; /* orange */
-      --glass: rgba(11,18,32,0.04);
-      --maxw:1100px;
-      --radius:14px;
-      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.6}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;height:auto;display:block}
-    .container{max-width:var(--maxw);margin:0 auto;padding:1rem}
-
-    /* Reused header/footer style similar to index.html */
-    nav.navbar{position:fixed;top:0;left:0;right:0;z-index:200;background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));border-bottom:1px solid rgba(11,18,32,0.04);backdrop-filter:blur(6px)}
-    .nav-container{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0.9rem 1rem}
-    .nav-logo h2{margin:0;font-size:1.05rem;letter-spacing:0.6px;font-weight:700}
-    .nav-logo span{display:block;font-size:0.78rem;color:var(--muted);margin-top:2px}
-    .nav-menu{list-style:none;display:flex;gap:1rem;margin:0;padding:0;align-items:center}
-    .nav-item .nav-link{color:var(--muted);padding:0.45rem 0.65rem;border-radius:8px;font-weight:600}
-    .nav-link.active{color:#fff;background:linear-gradient(90deg,var(--accent1),var(--accent2));box-shadow:0 8px 20px rgba(124,58,237,0.08)}
-    .nav-item.dropdown{position:relative}
-    .dropdown-menu{position:absolute;background:var(--card);padding:0.4rem;border-radius:8px;margin-top:0.6rem;display:none;box-shadow:0 10px 30px rgba(11,18,32,0.08)}
-    .nav-item.dropdown:hover .dropdown-menu{display:block}
-    .hamburger{display:none;cursor:pointer;width:44px;height:40px;align-items:center;justify-content:center;border-radius:8px}
-    .hamburger .bar{display:block;width:22px;height:2px;background:var(--text);margin:4px 0;transition:transform .25s ease,opacity .2s ease}
-    .hamburger.active .bar:nth-child(1){transform:translateY(6px) rotate(45deg)}
-    .hamburger.active .bar:nth-child(2){opacity:0}
-    .hamburger.active .bar:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-
-    /* Colorful hero */
-    .hero{padding-top:92px;padding-bottom:36px;background:linear-gradient(135deg,var(--accent2),var(--accent1));color:#fff}
-    .hero-container{max-width:var(--maxw);margin:0 auto;padding:2rem;display:flex;gap:1.5rem;align-items:center}
-    .hero-content{flex:1}
-    .hero h1{font-size:2rem;margin:0 0 0.5rem}
-    .hero p{margin:0 0 1rem;opacity:0.95}
-    .btn{display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 0.9rem;border-radius:10px;font-weight:700}
-    .btn-primary{background:#fff;color:var(--accent2)}
-    .btn-secondary{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);color:#fff}
-
-    .hero-card{background:linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.08));padding:1rem;border-radius:12px;box-shadow:0 8px 30px rgba(11,18,32,0.06);min-width:220px}
-
-    /* Sections */
-    section{padding:2.4rem 0}
-    .section-title{font-size:1.15rem;margin:0 0 0.6rem;font-weight:700}
-    .lead-muted{color:var(--muted)}
-
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-    .card{background:linear-gradient(180deg, #fff, #fffbf7);padding:1.2rem;border-radius:12px;border:1px solid rgba(11,18,32,0.04);box-shadow:0 6px 18px rgba(124,58,237,0.04)}
-    .card h4{margin-top:0}
-
-    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-    .process-step{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));padding:1rem;border-radius:10px;text-align:center;border:1px solid rgba(11,18,32,0.03)}
-    .step-num{width:44px;height:44px;border-radius:999px;background:linear-gradient(90deg,var(--accent3),var(--accent2));display:grid;place-items:center;font-weight:800;color:#fff;margin:0 auto 0.6rem}
-
-    .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-    .profile{padding:1rem;background:linear-gradient(90deg,#fff,#f7fbff);border-radius:12px;text-align:center;border:1px solid rgba(11,18,32,0.03)}
-    .avatar{width:72px;height:72px;border-radius:999px;margin:0 auto 0.6rem;background:linear-gradient(90deg,var(--accent1),var(--accent2));display:grid;place-items:center;color:#fff;font-weight:700}
-
-    .testimonials{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-    blockquote{margin:0;padding:1rem;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.88));border-left:6px solid rgba(124,58,237,0.12);border-radius:8px}
-
-    .cta{display:flex;justify-content:space-between;align-items:center;padding:1rem;border-radius:12px;background:linear-gradient(90deg, rgba(124,58,237,0.06), rgba(6,182,212,0.04));border:1px solid rgba(11,18,32,0.03)}
-
-    footer.footer{background:transparent;padding:2rem 0;color:var(--muted);border-top:1px solid rgba(11,18,32,0.04)}
-    .footer-content{display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-start;justify-content:space-between}
-    .footer-section{flex:1;min-width:200px}
-    .footer-bottom{text-align:center;margin-top:1rem;color:var(--muted)}
-
-    /* Responsive */
-    @media (max-width:1000px){
-      .grid-3{grid-template-columns:repeat(2,1fr)}
-      .team-grid{grid-template-columns:repeat(2,1fr)}
-      .process{grid-template-columns:repeat(2,1fr)}
-      .nav-menu{display:none}
-      .hamburger{display:flex}
-    }
-    @media (max-width:640px){
-      .grid-3{grid-template-columns:1fr}
-      .testimonials{grid-template-columns:1fr}
-      .footer-content{flex-direction:column}
-      .process{grid-template-columns:1fr}
-      .team-grid{grid-template-columns:1fr}
-      .hero-container{flex-direction:column;align-items:flex-start}
-      .hero-card{width:100%}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - FREELANCER AMIT | Business, Tax & Compliance</title>
+    <meta name="description" content="Learn about FREELANCER AMIT, your trusted partner for business compliance, tax filing, accounting, and digital growth solutions.">
+    <link rel="stylesheet" href="about-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<!-- HEADER copied to match index.html -->
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="nav-logo">
-            <h2>FREELANCER AMIT</h2>
-            <span>Business • Tax • Compliance</span>
-        </div>
-        <ul class="nav-menu">
-            <li class="nav-item">
-                <a href="index.html" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="about.html" class="nav-link active">About</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="services.html" class="nav-link">Services ▾</a>
-                <ul class="dropdown-menu">
-                    <li><a href="itr-filing.html" class="nav-link">ITR Filing</a></li>
-                    <li><a href="gst-services.html" class="nav-link">GST Services</a></li>
-                    <li><a href="mca-compliance.html" class="nav-link">MCA Compliance</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a href="contact.html" class="nav-link">Contact</a>
-            </li>
-        </ul>
-        <div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </div>
-</nav>
-
-<!-- COLOURFUL HERO -->
-<section class="hero">
-  <div class="hero-container container">
-    <div class="hero-content">
-      <h1>About FREELANCER AMIT</h1>
-      <p>Modern, colourful and dependable compliance services for MSMEs, startups and independent professionals. We combine experience with easy processes — so compliance feels simple.</p>
-      <div style="margin-top:1rem">
-        <a class="btn btn-primary" href="services.html"><i class="fa-solid fa-briefcase"></i> Our Services</a>
-        <a class="btn btn-secondary" href="contact.html"><i class="fa-solid fa-paper-plane"></i> Request Consultation</a>
-      </div>
-    </div>
-
-    <div class="hero-card">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div>
-          <div style="font-weight:800;font-size:1.4rem">6+</div>
-          <div style="color:var(--muted)">Years Experience</div>
-        </div>
-        <div>
-          <div style="font-weight:800;font-size:1.4rem">500+</div>
-          <div style="color:var(--muted)">Clients Served</div>
-        </div>
-      </div>
-      <div style="margin-top:0.8rem;color:var(--muted);font-size:0.95rem">Fast responses • Secure processes • Fixed pricing options</div>
-    </div>
-  </div>
-</section>
-
-<main>
-  <section>
-    <div class="container">
-      <h3 class="section-title">Philosophy</h3>
-      <p class="lead-muted">We believe compliance should empower business. Our goal: remove friction, reduce surprises, and keep you focused on growth.</p>
-
-      <div style="margin-top:1rem" class="grid-3">
-        <div class="card">
-          <h4>Client-first</h4>
-          <p class="lead-muted">Clear timelines, simple pricing and a human point-of-contact.</p>
-        </div>
-        <div class="card">
-          <h4>Modern process</h4>
-          <p class="lead-muted">Secure uploads, WhatsApp updates and digital-first workflows.</p>
-        </div>
-        <div class="card">
-          <h4>Care & accuracy</h4>
-          <p class="lead-muted">Attention to detail that reduces notices and penalties.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(247,250,255,0.95));">
-    <div class="container">
-      <h3 class="section-title">Services Snapshot</h3>
-      <div style="margin-top:1rem" class="grid-3">
-        <div class="card">
-          <h4>GST Services</h4>
-          <p class="lead-muted">Registration, returns, reconciliations and notices.</p>
-        </div>
-        <div class="card">
-          <h4>ITR & Tax</h4>
-          <p class="lead-muted">Income tax filing, revisions and planning.</p>
-        </div>
-        <div class="card">
-          <h4>MCA Filings</h4>
-          <p class="lead-muted">Incorporation, annual returns and ROC compliance.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <h3 class="section-title">4-step process</h3>
-      <div style="margin-top:1rem" class="process">
-        <div class="process-step">
-          <div class="step-num">1</div>
-          <h4 style="margin:0">Connect</h4>
-          <p class="lead-muted">Share documents securely.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">2</div>
-          <h4 style="margin:0">Plan</h4>
-          <p class="lead-muted">We propose a timeline & fixed cost.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">3</div>
-          <h4 style="margin:0">Execute</h4>
-          <p class="lead-muted">We file and follow up as needed.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">4</div>
-          <h4 style="margin:0">Support</h4>
-          <p class="lead-muted">Ongoing reminders & help.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="background:linear-gradient(90deg, rgba(255,255,255,0.96), rgba(245,250,255,0.98));">
-    <div class="container">
-      <h3 class="section-title">Team</h3>
-      <div style="margin-top:1rem" class="team-grid">
-        <div class="profile">
-          <div class="avatar">AK</div>
-          <h4 style="margin:0.5rem 0 0">Amit Kumar Das</h4>
-          <p class="lead-muted" style="margin:0.3rem 0 0">Tax & Compliance Consultant</p>
-        </div>
-        <div class="profile">
-          <div class="avatar">RS</div>
-          <h4 style="margin:0.5rem 0 0">Rina Sharma</h4>
-          <p class="lead-muted" style="margin:0.3rem 0 0">Tax Specialist</p>
-        </div>
-        <div class="profile">
-          <div class="avatar">SK</div>
-          <h4 style="margin:0.5rem 0 0">Suresh Kumar</h4>
-          <p class="lead-muted" style="margin:0.3rem 0 0">MCA & Corporate Filings</p>
-        </div>
-        <div class="profile">
-          <div class="avatar">ND</div>
-          <h4 style="margin:0.5rem 0 0">Nisha Patel</h4>
-          <p class="lead-muted" style="margin:0.3rem 0 0">Design & Digital Support</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <h3 class="section-title">Client Feedback</h3>
-      <div style="margin-top:1rem" class="testimonials">
-        <blockquote>
-          "Very prompt and accurate. Helped us with GST reconciliation and reduced our compliance overheads."<footer style="margin-top:0.6rem;color:var(--muted)">— R. Mishra, Small Business</footer>
-        </blockquote>
-        <blockquote>
-          "Clear advice and timely filing. Recommended for freelancers and small enterprises."<footer style="margin-top:0.6rem;color:var(--muted)">— K. Singh, Startup Founder</footer>
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="cta">
-        <div>
-          <h3 style="margin:0">Ready to simplify compliance?</h3>
-          <p class="lead-muted" style="margin:0.4rem 0 0">Get a clear plan and fixed-cost estimate tailored for your business.</p>
-        </div>
-        <div style="display:flex;gap:0.6rem">
-          <a class="btn btn-primary" href="contact.html"><i class="fa-solid fa-paper-plane"></i> Request Consultation</a>
-          <a class="btn btn-secondary" href="mailto:extrabenefit1@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- FOOTER copied to match index.html -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>FREELANCER AMIT</h3>
-                <p>Business • Tax • Compliance</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>FREELANCER AMIT</h2>
+                <span>Business • Tax • Compliance</span>
             </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="gst-services.html">GST Filing</a></li>
-                    <li><a href="mca-compliance.html">MCA Compliance</a></li>
-                    <li><a href="itr-filing.html">ITR Filing</a></li>
-                    <li><a href="services.html">Business Consulting</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Info</h4>
-                <p><i class="fas fa-phone"></i> +91 7749951944</p>
-                <p><i class="fas fa-envelope"></i> extrabenefit1@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> 436, Lane 4, Nuasahi, Nayapalli, Bhubaneswar, Odisha - 751012</p>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 FREELANCER AMIT — All Rights Reserved | Designed with ❤️ by Amit</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Empowering Businesses with Compliance Excellence & Digital Growth</h1>
+            <p>Your Trusted Partner in Business, Tax & Compliance</p>
+            <p>From startups to established enterprises, we help you manage GST, ITR, accounting, MCA filings, and digital services — all with accuracy, timeliness, and peace of mind.</p>
+            <div class="promise-box">
+                <strong>Our Promise:</strong> Simple, transparent, and stress-free support for your business — with reliable guidance at every step.
+            </div>
         </div>
-    </div>
-</footer>
+    </section>
 
-<script>
-  // Hamburger toggle
-  (function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    if (!hamburger || !navMenu) return;
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      if (navMenu.style.display === 'flex'){
-        navMenu.style.display = '';
-      } else {
-        navMenu.style.display = 'flex';
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.gap = '0.6rem';
-        navMenu.style.background = 'linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.96))';
-        navMenu.style.padding = '0.8rem';
-        navMenu.style.position = 'absolute';
-        navMenu.style.right = '1rem';
-        navMenu.style.top = '64px';
-        navMenu.style.borderRadius = '10px';
-        navMenu.style.boxShadow = '0 12px 30px rgba(11,18,32,0.08)';
-      }
-    });
-    hamburger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') hamburger.click();
-    });
-  })();
-</script>
+    <!-- Who We Are -->
+    <section class="who-we-are">
+        <div class="container">
+            <h2>Who We Are</h2>
+            <p>We are <strong>Freelancer Amit</strong>, a professional service provider dedicated to helping businesses simplify compliance, streamline operations, and accelerate growth. With over 6 years of hands-on experience, we specialize in GST filing, ITR submission, MCA compliance, accounting, and digital services designed to strengthen your business presence and performance.</p>
+            <p>We believe every business deserves expert guidance that is practical, reliable, and easy to follow. Our approach combines industry knowledge with a commitment to building long-term, trusted relationships.</p>
+        </div>
+    </section>
 
+    <!-- What We Do -->
+    <section class="what-we-do">
+        <div class="container">
+            <h2>What We Do</h2>
+            <div class="services-division">
+                <div class="service-division">
+                    <h3>Business, Tax & Compliance Services</h3>
+                    <ul>
+                        <li><strong>GST Filing & Advisory:</strong> Seamless GST registration, accurate return filing, and expert compliance guidance.</li>
+                        <li><strong>MCA & ROC Compliance:</strong> Complete company compliance, annual filings, and documentation support.</li>
+                        <li><strong>ITR Filing & Tax Planning:</strong> Personalized tax strategies and precise income tax return filing.</li>
+                        <li><strong>Business & Startup Consulting:</strong> Guidance for registration, planning, and sustainable growth.</li>
+                        <li><strong>Accounting & Bookkeeping:</strong> Professional bookkeeping and financial records management.</li>
+                    </ul>
+                </div>
+                <div class="service-division">
+                    <h3>Digital Growth & Branding Services</h3>
+                    <ul>
+                        <li><strong>Website Development:</strong> Modern, responsive, and SEO-friendly websites to showcase your brand.</li>
+                        <li><strong>Poster, Flyer & Banner Design:</strong> Creative designs for print and digital marketing.</li>
+                        <li><strong>Digital Marketing Support:</strong> Targeted ad campaigns and social media strategies to boost visibility.</li>
+                        <li><strong>Startup Registration & Setup Support:</strong> Assisting businesses with smooth registration and documentation.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <h2>Mission & Vision</h2>
+            <p><strong>Our Mission:</strong> To empower businesses with comprehensive, practical, and reliable solutions in compliance, tax, and digital growth, so our clients can focus on scaling their ventures confidently.</p>
+            <p><strong>Our Vision:</strong> To be the most trusted partner for small and medium businesses, providing innovative and efficient services that drive sustainable growth and long-term success.</p>
+        </div>
+    </section>
+
+    <!-- How We Help Businesses -->
+    <section class="how-we-help">
+        <div class="container">
+            <h2>How We Help Businesses</h2>
+            <ul>
+                <li><strong>Compliance Simplified:</strong> We manage your GST, ITR, MCA, and bookkeeping efficiently.</li>
+                <li><strong>Growth Enabled:</strong> Digital services like web development and marketing help expand your brand.</li>
+                <li><strong>Stress-Free Processes:</strong> Clear guidance, transparent pricing, and on-time delivery.</li>
+                <li><strong>Support You Can Trust:</strong> We are available whenever you need assistance or advice.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Work Philosophy -->
+    <section class="work-philosophy">
+        <div class="container">
+            <h2>Our Work Philosophy</h2>
+            <p>At <strong>Freelancer Amit</strong>, we believe that compliance and business growth are interconnected. Accuracy, timeliness, and reliability are at the core of our operations. We adopt a proactive approach to anticipate client needs and provide solutions before problems arise. Every service is tailored to your business goals, ensuring maximum impact and value.</p>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+        <div class="container">
+            <h2>Our Process</h2>
+            <ol>
+                <li><strong>Consultation & Planning:</strong> Understanding your business needs and compliance requirements.</li>
+                <li><strong>Execution & Filing:</strong> Handling GST, ITR, MCA, and digital services accurately and on schedule.</li>
+                <li><strong>Monitoring & Support:</strong> Continuous oversight, updates, and prompt support whenever needed.</li>
+                <li><strong>Growth & Optimization:</strong> Strategic guidance for business scaling, digital presence, and efficiency.</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="core-values">
+        <div class="container">
+            <h2>Core Values</h2>
+            <ul>
+                <li><strong>Integrity:</strong> We uphold the highest ethical standards in every interaction.</li>
+                <li><strong>Reliability:</strong> Consistent, accurate, and timely service delivery.</li>
+                <li><strong>Transparency:</strong> Clear pricing, processes, and communication.</li>
+                <li><strong>Client-Centric:</strong> Our focus is always on your success.</li>
+                <li><strong>Innovation:</strong> We embrace modern tools and approaches for better results.</li>
+                <li><strong>Excellence:</strong> Committed to high-quality outcomes in every task.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2>Why Choose Us</h2>
+            <ul>
+                <li><strong>Experienced Professional:</strong> Over 6 years of industry experience in business, tax, and compliance services.</li>
+                <li><strong>End-to-End Solutions:</strong> From registration to filing, digital presence, and ongoing support.</li>
+                <li><strong>Personalized Support:</strong> Tailored guidance based on your unique business needs.</li>
+                <li><strong>On-Time Delivery:</strong> Every service delivered accurately and punctually.</li>
+                <li><strong>Trusted Compliance:</strong> Ensuring your business stays fully compliant with all regulations.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Highlights / Achievements -->
+    <section class="highlights">
+        <div class="container">
+            <h2>Highlights & Achievements</h2>
+            <ul>
+                <li>500+ satisfied clients across industries</li>
+                <li>1000+ projects successfully completed</li>
+                <li>6+ years of professional experience in compliance and digital services</li>
+                <li>Recognized for accuracy, reliability, and client-focused service</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Client Support -->
+    <section class="client-support">
+        <div class="container">
+            <h2>Client Support & Service Commitment</h2>
+            <ul>
+                <li>Quick responses and personalized guidance</li>
+                <li>Transparent processes with no hidden costs</li>
+                <li>Commitment to building long-term, trusted relationships</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Grow Your Business with Confidence?</h2>
+            <p>Get expert assistance in GST, ITR, MCA compliance, accounting, and digital growth — all in one place.</p>
+            <a href="contact.html" class="btn btn-primary">Request Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FREELANCER AMIT</h3>
+                    <p>Business • Tax • Compliance</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +91 7653047026</p>
+                    <p><i class="fas fa-envelope"></i> freelanceramit.services@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 201, Gomti Devi Residency, Rasulgar, Bhubaneswar, Odisha - 751010</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FREELANCER AMIT — All Rights Reserved | Designed with ❤️ by Amit</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
