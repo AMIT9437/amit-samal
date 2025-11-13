@@ -1,13 +1,18 @@
-/* -------------------- GENERAL -------------------- */
+/* =========================================================
+   FREELANCER AMIT — ABOUT PAGE CSS
+   Colorful | Animated | Mobile-First | Responsive
+   ========================================================= */
+
+/* -------------------- GLOBAL STYLES -------------------- */
 body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
   color: #fff;
-  overflow-x: hidden;
-  animation: bgGradient 20s ease infinite;
   background: linear-gradient(270deg, #ff6b6b, #ffcc00, #00aaff, #7f53ac, #00ff99, #ff66cc, #00ffff, #ff9933);
   background-size: 1600% 1600%;
+  animation: bgGradient 25s ease infinite;
+  overflow-x: hidden;
 }
 
 @keyframes bgGradient {
@@ -20,10 +25,10 @@ body {
 
 .container {
   width: 90%;
-  margin: 0 auto;
   max-width: 1100px;
-  text-align: center;
+  margin: 0 auto;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 /* -------------------- NAVBAR -------------------- */
@@ -37,6 +42,7 @@ body {
   backdrop-filter: blur(10px);
   border-bottom: 2px solid rgba(255,255,255,0.2);
 }
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -44,78 +50,92 @@ body {
   width: 90%;
   margin: auto;
 }
+
 .nav-logo {
   font-weight: 700;
   font-size: 1.6rem;
-  text-shadow: 0 0 10px #fff, 0 0 20px #ffcc00;
+  color: #fff;
 }
+
 .nav-menu {
   list-style: none;
   display: flex;
   gap: 25px;
 }
+
 .nav-menu li a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
-.nav-menu li a:hover {
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
   color: #ffdd55;
-  text-shadow: 0 0 10px #ffdd55, 0 0 20px #ffcc00;
 }
+
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
 }
+
 .hamburger .bar {
   height: 3px;
   width: 25px;
   background-color: #fff;
   margin: 4px 0;
-  border-radius: 2px;
 }
 
 /* -------------------- INTRO SECTION -------------------- */
 .intro {
-  padding: 80px 0 60px;
+  text-align: center;
+  padding: 80px 20px 50px;
 }
+
+.intro h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
 .typing-text {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-top: 20px;
-  width: 100%;
-  overflow: hidden;
   white-space: nowrap;
+  overflow: hidden;
   border-right: 4px solid #fff;
-  animation: typing 10s steps(80, end), blink 0.8s step-end infinite;
+  width: 0;
+  animation: typing 5s steps(60, end) forwards, blink 0.8s step-end infinite;
 }
+
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
 }
+
 @keyframes blink {
-  from, to { border-color: transparent; }
-  50% { border-color: white; }
+  50% { border-color: transparent; }
 }
 
 /* -------------------- QUOTE CARD -------------------- */
 .quote-card {
-  background: rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, #ff6b6b, #ffcc00, #00aaff, #7f53ac);
+  background-size: 400% 400%;
+  animation: colorShift 10s ease infinite;
   border-radius: 20px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.3);
-  padding: 40px 25px;
-  color: #fff;
-  margin: 50px 0;
-  animation: colorShift 15s ease infinite;
-  transition: background 1s ease;
+  padding: 35px 20px;
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 50px auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
+
 @keyframes colorShift {
-  0% { background-color: #ff6b6b; }
-  25% { background-color: #ffcc00; }
-  50% { background-color: #00aaff; }
-  75% { background-color: #7f53ac; }
-  100% { background-color: #00ff99; }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* -------------------- PHOTO SHOWCASE -------------------- */
@@ -126,123 +146,148 @@ body {
   gap: 25px;
   margin: 60px 0;
 }
+
 .photo-card {
   width: 45%;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25), 0 0 15px rgba(255,255,255,0.2);
-  animation: slideIn 3s ease forwards;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  background: linear-gradient(135deg, #7f53ac, #647dee, #00aaff);
+  background-size: 300% 300%;
+  animation: gradientFlow 8s linear infinite;
 }
-.photo-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255,255,255,0.6);
-}
+
 .photo-card img {
   width: 100%;
   transition: transform 0.5s;
+  display: block;
 }
+
 .photo-card:hover img {
   transform: scale(1.1);
 }
-@keyframes slideIn {
-  from { transform: translateX(-40px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* -------------------- SERVICES SECTION -------------------- */
 .services {
-  margin: 80px 0;
+  text-align: center;
+  margin: 70px 0;
 }
+
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
 .service-card {
-  background: rgba(255,255,255,0.15);
+  background: linear-gradient(135deg, #00aaff, #ffcc00, #ff6b6b, #7f53ac);
+  background-size: 500% 500%;
+  animation: serviceGradient 12s linear infinite;
   border-radius: 20px;
-  padding: 30px;
-  margin: 20px auto;
+  padding: 25px 20px;
   color: #fff;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  border: 2px solid rgba(255,255,255,0.25);
-  transition: transform 0.3s, background 5s ease, box-shadow 0.3s;
-  animation: gradientShift 10s linear infinite;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  margin: 20px auto;
+  width: 90%;
+  transition: transform 0.3s;
 }
-@keyframes gradientShift {
-  0% { background-color: #00aaff; }
-  25% { background-color: #7f53ac; }
-  50% { background-color: #ffcc00; }
-  75% { background-color: #ff6b6b; }
-  100% { background-color: #00ff99; }
-}
+
 .service-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 0 25px rgba(255,255,255,0.6);
+  transform: translateY(-6px);
+}
+
+@keyframes serviceGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* -------------------- TEAM SECTION -------------------- */
 .team {
+  text-align: center;
   margin: 80px 0;
 }
+
 .team h2 {
   font-size: 2.2rem;
   margin-bottom: 40px;
-  text-shadow: 0 0 15px #fff, 0 0 25px #00ffcc;
 }
+
 .team-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
+  gap: 20px;
 }
+
 .member-card {
-  width: 150px;
-  background: rgba(255,255,255,0.15);
+  background: linear-gradient(135deg, #00ff99, #00aaff, #ffcc00, #7f53ac);
+  background-size: 600% 600%;
+  animation: teamColor 10s ease infinite;
   border-radius: 15px;
   padding: 20px;
+  width: 140px;
   text-align: center;
-  animation: fadeSlide 2s ease-in-out;
-  border: 2px solid rgba(255,255,255,0.2);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
 }
+
 .member-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+  transform: translateY(-8px);
 }
-@keyframes fadeSlide {
-  0% { transform: translateY(50px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+
+@keyframes teamColor {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
+
 .member-card img {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  margin-bottom: 10px;
   border: 3px solid #fff;
-  box-shadow: 0 0 10px #fff;
+  margin-bottom: 10px;
 }
+
 .member-card h4 {
-  font-size: 1.1rem;
   margin: 5px 0;
-  text-shadow: 0 0 8px #fff;
+  font-size: 1rem;
 }
+
 .member-card p {
-  font-size: 0.9rem;
-  color: #eee;
+  font-size: 0.85rem;
+  color: #fff;
 }
 
 /* -------------------- FOOTER -------------------- */
 .footer {
-  padding: 40px 20px;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   text-align: center;
+  padding: 30px 20px;
   font-size: 0.9rem;
   border-top: 2px solid rgba(255,255,255,0.2);
-  text-shadow: 0 0 10px #fff, 0 0 20px #00ffff;
 }
 
 /* -------------------- RESPONSIVE -------------------- */
 @media (max-width: 768px) {
   .nav-menu { display: none; }
   .hamburger { display: flex; }
+
   .photo-card { width: 90%; }
+
   .member-card { width: 45%; }
-  .typing-text { font-size: 1.2rem; }
+
+  .typing-text {
+    font-size: 1rem;
+  }
+
+  .service-card {
+    width: 100%;
+  }
 }
