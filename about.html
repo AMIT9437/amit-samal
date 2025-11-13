@@ -1,447 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — FREELANCER AMIT | Business & Digital Services</title>
-  <meta name="description" content="About FREELANCER AMIT — business compliance, taxation, MCA, ITR filing plus website development and creative design."/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Freelancer Amit</title>
   <style>
-    /* ======= RESET & BASE ======= */
-    :root{
-      --max-width:1100px;
-      --page-pad:18px;
-      --card-radius:14px;
-      --accent: #0b76ff;
-      --muted: #6b7280;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:'Poppins',sans-serif;background:#f7fbff;color:#111;-webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
-    a{color:inherit}
-    .site{max-width:var(--max-width);margin:0 auto;padding:28px var(--page-pad);}
-
-/* ======= NAVBAR ======= */
-    .navbar{position:sticky;top:12px;z-index:60;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);padding:12px;border-radius:10px;box-shadow:0 8px 30px rgba(12,15,30,0.06);}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:var(--max-width);margin:0 auto;}
-    .nav-left{display:flex;align-items:center;gap:12px}
-    .nav-logo h2{margin:0;font-size:1.05rem;color:#0b76ff;letter-spacing:0.2px}
-    .nav-logo span{display:block;font-size:0.78rem;color:var(--muted)}
-    .nav-menu{display:flex;gap:14px;list-style:none;padding:0;margin:0;align-items:center}
-    .nav-menu a{color:#0b1220;text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px;transition:all .18s ease}
-    .nav-menu a:hover,.nav-menu a.active{background:linear-gradient(90deg,#0b76ff22,#7f53ac22);color:#0b3b7a}
-    /* hamburger */
-    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border-radius:8px;border:1px solid transparent}
-    .hamburger .bar{width:22px;height:2px;background:#111;border-radius:2px;display:block}
-    /* small screens */
-    @media (max-width:900px){
-      .nav-menu{display:none;position:absolute;right:18px;top:74px;background:#fff;padding:14px;border-radius:10px;box-shadow:0 12px 40px rgba(12,15,30,0.12);flex-direction:column;min-width:220px}
-      .nav-menu.active{display:flex}
-      .hamburger{display:flex}
+    /* -------------------- GENERAL -------------------- */
+    html {
+      scroll-behavior: smooth;
     }
 
-/* ======= PAGE HEADER / TYPING ======= */
-    .page-header{margin-top:8px;text-align:center;padding:20px;border-radius:12px}
-    .card{background:#fff;border-radius:var(--card-radius);padding:18px;box-shadow:0 10px 28px rgba(20,20,50,0.06);margin:18px 0;overflow:hidden}
-    .card-title{font-size:1.15rem;font-weight:700;margin-bottom:8px;text-align:center;color:#0b3b7a}
-    .intro-typing{font-weight:600;font-size:1.2rem;min-height:64px;text-align:center;color:#0b2b4a}
-    .sub-lead{color:var(--muted);margin-top:8px;text-align:center}
-
-/* ======= COLORFUL / ANIMATED CARDS (lightweight) ======= */
-    .color-card{position:relative;overflow:hidden}
-    .color-card::before{
-      content:"";
-      position:absolute;inset:-30% -30%;
-      background:linear-gradient(60deg,#ff6b6b,#ffcc00,#00aaff,#7f53ac,#00ff99);
-      background-size: 160% 160%;
-      filter:blur(36px) saturate(1.05);
-      opacity:0.16;
-      transform:rotate(6deg);
-      z-index:0;
-      transition:opacity .3s ease;
-      animation: subtleShift 12s linear infinite;
-      will-change:transform;
-    }
-    .color-card > *{position:relative;z-index:1}
-    @keyframes subtleShift{
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
-    }
-    /* reduce animation for users who prefer less motion */
-    @media (prefers-reduced-motion: reduce){
-      .color-card::before{animation:none;opacity:0.12}
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      color: #fff;
+      background: linear-gradient(270deg, #ff6b6b, #ffcc00, #00aaff, #7f53ac, #00ff99, #ff66cc, #00ffff, #ff9933);
+      background-size: 800% 800%;
+      animation: bgShift 25s ease infinite;
+      overflow-x: hidden;
     }
 
-/* ======= LAYOUT & UTILITIES ======= */
-    .center{text-align:center}
-    .muted{color:var(--muted)}
-    .split{display:flex;gap:18px;align-items:stretch;flex-wrap:wrap}
-    .split>.col{flex:1 1 320px;min-width:260px}
-    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px}
-    .service-pill{background:linear-gradient(180deg,rgba(255,255,255,0.98),#fff);border-radius:10px;padding:12px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
-    .service-pill h4{margin:6px 0 4px;font-size:0.98rem;color:#0b3b7a}
-
-/* ======= PHOTOS ======= */
-    img.responsive{width:100%;height:auto;border-radius:12px;object-fit:cover;display:block}
-
-/* ======= STEPS ======= */
-    .steps{display:flex;gap:12px;flex-direction:column}
-    .step{display:flex;gap:12px;align-items:flex-start}
-    .step-number{min-width:36px;height:36px;border-radius:10px;background:#0b76ff;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
-    .step-body h4{margin:0 0 6px 0;font-size:1rem}
-    .step-body p{margin:0;color:#444}
-
-/* ======= TEAM ======= */
-    .team-grid{display:flex;gap:12px;overflow:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch}
-    .team-card{min-width:180px;flex:0 0 180px;background:#fff;border-radius:12px;padding:12px;text-align:center;box-shadow:0 8px 22px rgba(10,10,30,0.06)}
-    .team-photo{width:84px;height:84px;border-radius:50%;object-fit:cover;margin:0 auto 8px;display:block;border:3px solid #fff}
-
-/* ======= CTA / BUTTONS ======= */
-    .btn{display:inline-block;padding:10px 16px;border-radius:8px;font-weight:600;text-decoration:none}
-    .btn-primary{background:linear-gradient(90deg,#0b76ff,#7f53ac);color:#fff}
-    .btn-ghost{background:transparent;border:1px solid #0b76ff;color:#0b76ff}
-
-/* ======= FOOTER ======= */
-    footer.footer{text-align:center;padding:20px 0;margin-top:16px;color:#566;}
-
-/* ======= RESPONSIVE ======= */
-    @media (max-width:900px){
-      .split{flex-direction:column}
-      .team-card{flex:0 0 46%}
-      .service-pill{font-size:0.92rem}
-      .card{padding:14px}
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* -------------------- NAVBAR -------------------- */
+    .navbar {
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      transition: background 0.4s ease;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      margin: auto;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-menu li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-menu li a:hover {
+      color: #ffdd55;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger .bar {
+      height: 3px;
+      width: 25px;
+      background-color: #fff;
+      margin: 4px 0;
+      border-radius: 5px;
+    }
+
+    /* -------------------- INTRO SECTION -------------------- */
+    .intro {
+      padding: 80px 0 40px;
+    }
+
+    .intro h1 {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+
+    .typing-text {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      border-right: 3px solid #fff;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 5s steps(50, end) infinite alternate, blink 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* -------------------- COLOR CARDS -------------------- */
+    .color-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+      border-radius: 20px;
+      padding: 30px;
+      margin: 25px auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      backdrop-filter: blur(6px);
+      transition: transform 0.4s, box-shadow 0.4s;
+      color: #fff;
+      max-width: 900px;
+      animation: cardShift 10s ease infinite alternate;
+    }
+
+    @keyframes cardShift {
+      0% { background-color: rgba(255, 107, 107, 0.2); }
+      50% { background-color: rgba(0, 170, 255, 0.2); }
+      100% { background-color: rgba(255, 204, 0, 0.2); }
+    }
+
+    .color-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    }
+
+    /* -------------------- TEAM SECTION -------------------- */
+    .team {
+      margin: 80px 0;
+    }
+
+    .team h2 {
+      font-size: 2.3rem;
+      margin-bottom: 40px;
+    }
+
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .member-card {
+      width: 180px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      animation: fadeUp 1.2s ease-in-out;
+    }
+
+    .member-card:hover {
+      transform: translateY(-6px);
+    }
+
+    @keyframes fadeUp {
+      0% { transform: translateY(30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .member-card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 3px solid #fff;
+      object-fit: cover;
+    }
+
+    .member-card h4 {
+      margin: 8px 0 4px;
+      font-size: 1rem;
+    }
+
+    .member-card p {
+      font-size: 0.85rem;
+      color: #eee;
+    }
+
+    /* -------------------- FOOTER -------------------- */
+    .footer {
+      padding: 35px 20px;
+      background: rgba(0,0,0,0.5);
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* -------------------- RESPONSIVE -------------------- */
+    @media (max-width: 768px) {
+      .nav-menu { display: none; }
+      .hamburger { display: flex; }
+      .color-card { width: 95%; }
+      .member-card { width: 45%; }
+    }
+
   </style>
 </head>
 <body>
-  <div class="site">
 
-    <!-- NAV -->
-    <header class="navbar" role="banner">
-      <div class="nav-inner">
-        <div class="nav-left">
-          <div class="nav-logo" aria-hidden="true">
-            <h2>FREELANCER AMIT</h2>
-            <span>Professional Business & Digital Services</span>
-          </div>
-        </div>
-
-        <nav aria-label="Main navigation">
-          <ul class="nav-menu" id="navMenu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="gst-services.html">GST</a></li>
-            <li><a href="mca-compliance.html">MCA</a></li>
-            <li><a href="itr-filing.html">ITR</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">Freelancer Amit</div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" style="color:#ffdd55;">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
       </div>
-    </header>
+    </div>
+  </nav>
 
-    <!-- Header / Typing intro -->
-    <section class="page-header" aria-labelledby="aboutHeading">
-      <div class="card center color-card">
-        <div style="padding:6px 12px;">
-          <div id="aboutHeading" class="card-title">About FREELANCER AMIT</div>
-          <div class="intro-typing" id="introTyping" aria-live="polite"></div>
-          <div class="sub-lead muted">Business compliance, taxation & digital services — combined for your growth.</div>
-        </div>
+  <!-- Intro Section -->
+  <section class="intro container">
+    <h1>About Freelancer Amit</h1>
+    <div class="typing-text">We build success with creativity, code, and care...</div>
+  </section>
+
+  <!-- Service Cards -->
+  <section class="container">
+    <div class="color-card">
+      <h2>Our Story</h2>
+      <p>Freelancer Amit started as a small initiative to support businesses with their GST, ITR, and accounting needs — but we soon expanded our services to website development, creative posters, and event designs. Today, we proudly combine business solutions with digital innovation.</p>
+    </div>
+
+    <div class="color-card">
+      <h2>Our Vision</h2>
+      <p>To become a one-stop destination for both business and web services — from filing your returns to building your online identity — we aim to empower freelancers, startups, and companies with professional support and creative designs.</p>
+    </div>
+
+    <div class="color-card">
+      <h2>Our Services</h2>
+      <ul style="list-style:none; padding:0;">
+        <li>✔ GST Registration, Filing & ITR</li>
+        <li>✔ New Website Development & Maintenance</li>
+        <li>✔ Old Website Redesign & Modification</li>
+        <li>✔ Poster, Flyer, & Advertising Design</li>
+        <li>✔ Event & Festival Poster Creation</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team container">
+    <h2>Meet Our Team</h2>
+    <div class="team-grid">
+      <div class="member-card">
+        <img src="founder-placeholder.jpg" alt="Founder">
+        <h4>Amit Kumar</h4>
+        <p>Founder & Lead Developer</p>
       </div>
-    </section>
-
-    <div style="height:14px"></div>
-
-    <!-- Company snapshot & mission/vision -->
-    <section aria-labelledby="snapshotTitle">
-      <div class="split">
-        <div class="col">
-          <article class="card color-card" id="companyCard">
-            <div class="card-title center">What We Do</div>
-            <p class="center">We help small businesses, startups, and professionals with accurate compliance and high-impact digital services. From GST/ITR/MCA filings to websites, posters and advertising collateral — we deliver end-to-end solutions that save time and reduce risk.</p>
-
-            <div class="services-grid" style="margin-top:12px;">
-              <div class="service-pill"><i class="fas fa-file-invoice fa-lg"></i><h4>GST & Returns</h4></div>
-              <div class="service-pill"><i class="fas fa-file-alt fa-lg"></i><h4>ITR & Tax</h4></div>
-              <div class="service-pill"><i class="fas fa-building fa-lg"></i><h4>MCA / ROC</h4></div>
-              <div class="service-pill"><i class="fas fa-laptop-code fa-lg"></i><h4>Web Dev</h4></div>
-              <div class="service-pill"><i class="fas fa-paint-brush fa-lg"></i><h4>Design & Posters</h4></div>
-              <div class="service-pill"><i class="fas fa-headset fa-lg"></i><h4>Support</h4></div>
-            </div>
-          </article>
-        </div>
-
-        <div class="col">
-          <article class="card color-card" id="missionCard">
-            <div class="card-title center">Mission & Vision</div>
-            <p class="center"><strong>Mission:</strong> Simplify compliance and build digital presence so businesses can focus on growth.</p>
-            <p class="center"><strong>Vision:</strong> Be the trusted one-stop partner for compliance and digital services across India.</p>
-            <p class="muted center" style="margin-top:10px">We combine tax and regulatory expertise with practical web & design skills — saving clients time and cost.</p>
-          </article>
-        </div>
+      <div class="member-card">
+        <img src="team1-placeholder.jpg" alt="Team Member 1">
+        <h4>Priya Sharma</h4>
+        <p>Creative Designer</p>
       </div>
-    </section>
-
-    <div style="height:14px"></div>
-
-    <!-- Founder & Office photos (colorful pair) -->
-    <section aria-label="Founder & Office photos">
-      <div class="split" style="align-items:stretch;">
-        <div class="col">
-          <div class="card color-card" id="founderCard">
-            <div class="card-title center">Founder Snapshot</div>
-            <img src="images/founder.jpg" alt="Amit — Founder" class="responsive" onerror="this.src='https://via.placeholder.com/800x450?text=Amit'">
-            <p class="center muted">Amit is a qualified accounting professional with 3+ years of experience in taxation, GST, MCA and finance compliance. Commerce graduate, pursuing CA & CMA, Registered GST Practitioner.</p>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card color-card" id="officeCard">
-            <div class="card-title center">Office & Work Samples</div>
-            <img src="images/company-office.jpg" alt="Office & Work" class="responsive" onerror="this.src='https://via.placeholder.com/800x450?text=Office'">
-            <p class="center muted">We deliver filings, websites and print collateral — all under one roof. Fast turnarounds and secure handling of client data.</p>
-          </div>
-        </div>
+      <div class="member-card">
+        <img src="team2-placeholder.jpg" alt="Team Member 2">
+        <h4>Rohit Verma</h4>
+        <p>Technical Consultant</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <div style="height:14px"></div>
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 Freelancer Amit | All Rights Reserved
+  </footer>
 
-    <!-- Services Detailed -->
-    <section aria-labelledby="servicesTitle">
-      <div class="card">
-        <div id="servicesTitle" class="card-title center">Our Service Areas — Detailed</div>
-
-        <div style="margin-top:10px;">
-          <h4 style="text-align:center;margin-bottom:8px;">Business Compliance & Taxation</h4>
-          <ul style="max-width:820px;margin:0 auto 12px;padding-left:18px;text-align:left;">
-            <li>GST registration, returns, reconciliation and audit support.</li>
-            <li>Individual & business ITR filing, revised returns and tax planning.</li>
-            <li>MCA/ROC services: company incorporation, annual filings, director KYC.</li>
-            <li>Statutory filings: TDS, EPF, ESIC, and payroll compliance.</li>
-            <li>Audits: internal, statutory, and compliance reviews.</li>
-          </ul>
-
-          <h4 style="text-align:center;margin-bottom:8px;margin-top:8px;">Web & Creative Services</h4>
-          <ul style="max-width:820px;margin:0 auto;padding-left:18px;text-align:left;">
-            <li>Full website development — responsive, SEO-friendly, fast-loading.</li>
-            <li>Website maintenance, security updates and performance tuning.</li>
-            <li>Poster, flyer, banner and event collateral — print & digital-ready.</li>
-            <li>Branding essentials: logos, palettes and social media templates.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <div style="height:14px"></div>
-
-    <!-- Process -->
-    <section aria-labelledby="processTitle">
-      <div class="card">
-        <div id="processTitle" class="card-title center">Our Process — Simple & Transparent</div>
-
-        <div class="steps" style="max-width:840px;margin:12px auto 0;">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-body">
-              <h4>Discover & Plan</h4>
-              <p>Quick call to understand your needs and deadlines. We propose a clear plan.</p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-body">
-              <h4>Quote & Milestones</h4>
-              <p>Transparent pricing with a delivery timeline — for filings or website projects.</p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-body">
-              <h4>Execute</h4>
-              <p>We collect documents or content, prepare deliverables and run internal QA checks.</p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-number">4</div>
-            <div class="step-body">
-              <h4>Deliver & Support</h4>
-              <p>We hand over files, assist verification, and offer short-term post-delivery support.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div style="height:14px"></div>
-
-    <!-- Team -->
-    <section aria-labelledby="teamTitle">
-      <div class="card">
-        <div id="teamTitle" class="card-title center">Meet Our Team</div>
-        <p class="center muted">Core team — demo profiles. Replace images & bios with actual team details later.</p>
-
-        <div class="team-grid" style="margin-top:12px;">
-          <div class="team-card">
-            <img src="images/Amit-panda.jpg" alt="Amit — Founder" class="team-photo" onerror="this.src='https://via.placeholder.com/84'">
-            <div class="team-name">Amit</div>
-            <div class="team-role">Founder • Tax & Compliance Specialist</div>
-            <div class="muted" style="margin-top:8px;font-size:0.85rem;">Commerce graduate. CA & CMA (pursuing). GSTP. 3+ years experience.</div>
-          </div>
-
-          <div class="team-card">
-            <img src="images/demo-ca.jpg" alt="Sneha — CA" class="team-photo" onerror="this.src='https://via.placeholder.com/84'">
-            <div class="team-name">Sneha</div>
-            <div class="team-role">Chartered Accountant</div>
-            <div class="muted" style="margin-top:8px;font-size:0.85rem;">Audits & tax compliance specialist with corporate experience.</div>
-          </div>
-
-          <div class="team-card">
-            <img src="images/demo-cma.jpg" alt="Rohit — CMA" class="team-photo" onerror="this.src='https://via.placeholder.com/84'">
-            <div class="team-name">Rohit</div>
-            <div class="team-role">Cost Accountant (CMA)</div>
-            <div class="muted" style="margin-top:8px;font-size:0.85rem;">Budgeting, costing & performance analysis expert.</div>
-          </div>
-
-          <div class="team-card">
-            <img src="images/demo-mca.jpg" alt="Priya — MCA Expert" class="team-photo" onerror="this.src='https://via.placeholder.com/84'">
-            <div class="team-name">Priya</div>
-            <div class="team-role">MCA / ROC Expert</div>
-            <div class="muted" style="margin-top:8px;font-size:0.85rem;">Company filings, board governance and secretarial support.</div>
-          </div>
-
-          <div class="team-card">
-            <img src="images/demo-dev.jpg" alt="Karan — Developer" class="team-photo" onerror="this.src='https://via.placeholder.com/84'">
-            <div class="team-name">Karan</div>
-            <div class="team-role">Senior Web Developer</div>
-            <div class="muted" style="margin-top:8px;font-size:0.85rem;">Frontend & backend work: fast, responsive and SEO-ready builds.</div>
-          </div>
-
-          <div class="team-card">
-            <img src="images/demo-designer.jpg" alt="Rina — Designer" class="team-photo" onerror="this.src='https://via.placeholder.com/84'">
-            <div class="team-name">Rina</div>
-            <div class="team-role">UI / Graphic Designer</div>
-            <div class="muted" style="margin-top:8px;font-size:0.85rem;">Creative lead for posters, banners and social ads.</div>
-          </div>
-        </div>
-
-        <p class="muted center" style="margin-top:12px;">(Swipe horizontally on mobile to view more team members.)</p>
-      </div>
-    </section>
-
-    <div style="height:14px"></div>
-
-    <!-- Trust + Contact -->
-    <section>
-      <div class="split">
-        <div class="col">
-          <div class="card color-card">
-            <div class="card-title center">Trust & Guarantees</div>
-            <ul style="padding-left:18px;max-width:520px;margin:10px auto 0;text-align:left;">
-              <li>Confidential and secure handling of client documents.</li>
-              <li>Accuracy promise — we correct our mistakes at no extra cost.</li>
-              <li>Transparent pricing and clear delivery timelines.</li>
-              <li>Local support (Bhubaneswar) and remote services across India.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card color-card">
-            <div class="card-title center">Contact & Office</div>
-            <p class="center"><strong>Phone:</strong> <a href="tel:+917653047026">+91 76530 47026</a></p>
-            <p class="center"><strong>Email:</strong> <a href="mailto:amitfreelancer.services@gmail.com">amitfreelancer.services@gmail.com</a></p>
-            <p class="center"><strong>Address:</strong> Flat No 214, Gomti Devi Residency, Rasulgarh, Bhubaneswar, Odisha — 751010</p>
-            <div style="text-align:center;margin-top:8px;">
-              <a class="btn btn-primary" href="contact.html">Request Free Consultation</a>
-              <a class="btn btn-ghost" href="tel:+917653047026">Call Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div style="height:14px"></div>
-
-    <!-- Final CTA -->
-    <section>
-      <div class="card cta color-card">
-        <div class="card-title center">Ready to simplify compliance or launch a website?</div>
-        <p class="center muted">Tell us your priority — compliance or digital — and we’ll send a custom plan.</p>
-        <div style="text-align:center;margin-top:8px;">
-          <a class="btn btn-primary" href="contact.html">Get a Free Quote</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer" role="contentinfo">
-      <div style="max-width:var(--max-width);margin:0 auto;padding:6px;">
-        <p>&copy; 2025 FREELANCER AMIT — Professional Business Services</p>
-        <p class="muted">Designed & maintained by Amit. All rights reserved.</p>
-      </div>
-    </footer>
-  </div>
-
-  <!-- ======= SCRIPTS ======= -->
+  <!-- JavaScript -->
   <script>
-    // hamburger menu toggle (works with navMenu id)
-    (function(){
-      const hamburger = document.getElementById('hamburger');
-      const navMenu = document.getElementById('navMenu');
-      if(hamburger && navMenu){
-        hamburger.addEventListener('click', ()=> {
-          const open = navMenu.classList.toggle('active');
-          hamburger.setAttribute('aria-expanded', String(open));
-        });
-        // close on outside click (small screens)
-        document.addEventListener('click', (e) => {
-          if(window.innerWidth <= 900){
-            if(!navMenu.contains(e.target) && !hamburger.contains(e.target)){
-              navMenu.classList.remove('active');
-              hamburger.setAttribute('aria-expanded','false');
-            }
-          }
-        });
-      }
-    })();
-
-    // Typing intro (efficient, loops lines)
-    (function(){
-      const el = document.getElementById('introTyping');
-      if(!el) return;
-      const lines = [
-        "Professional business compliance & creative digital services — all in one place.",
-        "GST, ITR & MCA handled with precision. Websites, posters and branding that convert.",
-        "Fast turnarounds. Clear pricing. Real people to answer your questions."
-      ];
-      const typingSpeed = 28;
-      const pause = 900;
-      let li = 0, ci = 0;
-      function type(){
-        const line = lines[li];
-        if(ci <= line.length){
-          el.textContent = line.slice(0,ci);
-          ci++;
-          setTimeout(type, typingSpeed);
-        } else {
-          setTimeout(()=>{ ci=0; li=(li+1)%lines.length; setTimeout(type,200); }, pause);
-        }
-      }
-      setTimeout(type,300);
-    })();
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    hamburger.addEventListener("click", () => {
+      navMenu.style.display = navMenu.style.display === "flex" ? "none" : "flex";
+      navMenu.style.flexDirection = "column";
+      navMenu.style.gap = "15px";
+      navMenu.style.background = "rgba(0,0,0,0.8)";
+      navMenu.style.padding = "15px";
+      navMenu.style.borderRadius = "10px";
+    });
   </script>
+
 </body>
 </html>
