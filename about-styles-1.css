@@ -1,454 +1,248 @@
-/* ===========================
-   ABOUT.CSS — PART 1
-   Core / Hero / Typography / Containers
-   Luxury Neon Multicolor Gradient + Reveal helpers
-   =========================== */
-
-/* --- Variables: multi-color neon palette (10+ color stops blended) --- */
-:root{
-  --page-bg: #fafafa;
-  --card-bg: #ffffff;
-  --text: #0b1220;
-  --muted: #586173;
-  --radius: 12px;
-  --maxw: 1100px;
-
-  /* Luxury Neon Gradient — long blended gradient for hero & accents */
-  --neon-gradient: linear-gradient(120deg,
-      #0ea5f6 0%,
-      #7c3aed 9%,
-      #ec4899 18%,
-      #f97316 27%,
-      #f59e0b 36%,
-      #06b6d4 45%,
-      #14b8a6 54%,
-      #8b5cf6 63%,
-      #ef4444 72%,
-      #fb7185 82%,
-      #06b6d4 92%);
-  --neon-gradient-anim: 300% 300%; /* for animated background sizing */
-
-  --glass-border: rgba(11,18,32,0.04);
-  --shadow-sm: 0 6px 22px rgba(11,18,32,0.06);
-  --shadow-md: 0 12px 36px rgba(11,18,32,0.09);
-}
-
-/* --- Base reset / typography --- */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  background:var(--page-bg);
-  color:var(--text);
-  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.55;
-  -webkit-font-feature-settings: "liga" 1;
-}
-
-/* Utility container */
-.container{max-width:var(--maxw);margin:0 auto;padding:0 18px}
-
-/* Headings */
-h1,h2,h3,h4{margin:0;padding:0}
-h1{font-size:1.6rem;line-height:1.06}
-h2{font-size:1.15rem}
-.section-title{font-weight:700;color:var(--text);font-size:1.05rem;margin-bottom:0.6rem}
-.lead-muted{color:var(--muted)}
-
-/* Links & buttons */
-a{color:inherit;text-decoration:none}
-.btn{display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 0.9rem;border-radius:10px;font-weight:700}
-.btn-primary{background:var(--text);color:#fff;border:none;box-shadow:var(--shadow-sm)}
-.btn-secondary{background:transparent;border:1px solid var(--glass-border);color:var(--text)}
-
-/* --- NAVBAR space compensation for sticky header --- */
-body{padding-top:72px} /* matches your header height to avoid overlap on mobile */
-
-/* If your actual header differs, adjust padding-top accordingly */
-
-/* ========== HERO ========== */
-/* The hero gets the animated neon gradient background, but text sits on a card for readability */
-.about-hero{
-  position:relative;
-  overflow:hidden;
-  /* outer gradient container */
-  background:var(--neon-gradient);
-  background-size: var(--neon-gradient-anim);
-  border-bottom: 1px solid var(--glass-border);
-  padding:32px 0;
-  animation: neonMove 18s linear infinite;
-}
-
-/* subtle slow movement */
-@keyframes neonMove{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-
-/* hero inner container: mobile-first single column then two-column on larger screens */
-.about-hero-container{
-  max-width:var(--maxw);
-  margin:0 auto;
-  padding:10px 18px;
-  display:flex;
-  align-items:center;
-  gap:18px;
-  justify-content:space-between;
-  flex-wrap:wrap;
-}
-
-/* text block */
-.about-hero-text{
-  flex:1 1 320px;
-  color:rgba(255,255,255,0.98); /* large contrast on gradient */
-  min-width:220px;
-}
-
-/* neon-highlight for name/brand with gradient text */
-.highlight{
-  display:inline-block;
-  background:var(--neon-gradient);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-  font-weight:800;
-  letter-spacing:0.2px;
-  font-size:1.6rem;
-}
-
-/* hero image card (white card overlapping gradient for contrast) */
-.about-hero-image{
-  flex:0 0 160px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-width:140px;
-}
-.about-hero-image img{
-  width:140px;
-  height:140px;
-  object-fit:cover;
-  border-radius:10px;
-  border:4px solid rgba(255,255,255,0.92);
-  box-shadow:var(--shadow-md);
-  background:#fff;
-}
-
-/* To avoid text being cut on edges on mobile:
-   global left/right padding is through .container and .about-hero-container uses padding too.
-   If you want extra breathing room on very small phones, you can increase .container padding. */
-
-/* ========== SECTION LAYOUTS ========== */
-.about-section, .about-grid, .why-me, .cta{
-  padding:28px 0;
-  background:transparent;
-}
-
-/* grid boxes used for mission/vision/approach */
-.about-grid .container{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-}
-.grid-box{
-  background:var(--card-bg);
-  border-radius:var(--radius);
-  padding:16px;
-  border:1px solid var(--glass-border);
-  box-shadow:var(--shadow-sm);
-  min-height:120px;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-.grid-box i{font-size:20px;color:var(--text)}
-
-/* features grid for Why Me */
-.features-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin-top:12px;
-}
-.feature{
-  background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.98));
-  border-radius:10px;
-  padding:14px;
-  border:1px solid var(--glass-border);
-  box-shadow:var(--shadow-sm);
-  display:flex;
-  gap:12px;
-  align-items:flex-start;
-}
-.feature i{
-  width:46px;height:46px;border-radius:10px;display:grid;place-items:center;
-  background:rgba(11,18,32,0.04);font-size:18px;color:var(--text)
-}
-.feature h3{margin:0;font-size:0.98rem}
-.feature p{margin:0;color:var(--muted);font-size:0.92rem}
-
-/* CTA */
-.cta{background:linear-gradient(90deg, rgba(11,18,32,0.02), rgba(11,18,32,0.00));border-top:1px solid var(--glass-border)}
-.cta .container{display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between}
-.cta h2{margin:0;font-size:1rem}
-.cta p{margin:0;color:var(--muted)}
-
-/* Footer spacing */
-.footer{padding:22px 0;background:transparent;border-top:1px solid var(--glass-border)}
-.footer .footer-content{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}
-.footer .footer-section{flex:1 1 180px;min-width:160px}
-
-/* ========== Reveal animation helpers (used to trigger slide-in) ========== */
-/* initial hidden state */
-.reveal{
-  opacity:0;
-  transform:translateX(-18px);
-  transition:opacity 700ms cubic-bezier(.2,.9,.26,1), transform 700ms cubic-bezier(.2,.9,.26,1);
-  will-change:transform,opacity;
-}
-
-/* in-view state — when JS or CSS adds .in-view, element slides in */
-.reveal.in-view{
-  opacity:1;
-  transform:translateX(0);
-}
-
-/* Staggered child reveal support using CSS variables (delays will be set inline via style or JS) */
-.reveal[data-delay]{
-  transition-delay: calc(var(--delay, 0ms));
-}
-
-/* Fallback for browsers not running JS — animate on-load slightly */
-@media (prefers-reduced-motion: no-preference){
-  .reveal.animate-on-load{
-    animation:fadeInLeft 820ms ease forwards;
-  }
-}
-@keyframes fadeInLeft{
-  0%{opacity:0;transform:translateX(-22px)}
-  100%{opacity:1;transform:translateX(0)}
-}
-
-/* ========== Accessibility helpers ========== */
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-
-/* ========== Responsive base (mobile-first) ========== */
-@media (max-width:1000px){
-  .about-grid .container{grid-template-columns:repeat(1,1fr)} /* stack mission boxes on mobile */
-  .features-grid{grid-template-columns:repeat(1,1fr)}
-  .grid-box{min-height:auto}
-  .about-hero-image img{width:120px;height:120px}
-  body{padding-top:72px} /* keep header spacing */
-}
-
-@media (min-width:1001px){
-  .about-hero-container{flex-wrap:nowrap}
-  .about-hero-text{flex:1 1 60%}
-  .about-hero-image{flex:0 0 220px}
-  .about-hero-image img{width:180px;height:180px}
-  .about-grid .container{grid-template-columns:repeat(3,1fr)}
-  .features-grid{grid-template-columns:repeat(3,1fr)}
-}
-
-/* End of PART 1 */
-/* ===========================
-   ABOUT.CSS — PART 2
-   Multicolor Cards / Animated Borders / Staggered Reveal
-   =========================== */
-
-/* Extra padding so text never touches edges on small phones */
-@media (max-width: 480px) {
-  .container {
-    padding-left: 22px;
-    padding-right: 22px;
-  }
-}
-
-/* ========== MULTICOLOR NEON CARDS ========== */
-/* Card with animated multicolor border and subtle glow */
-.neon-card {
-  position: relative;
-  background: var(--card-bg);
-  border-radius: var(--radius);
-  padding: 18px;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  z-index: 1;
-  border: 1px solid transparent;
-}
-
-/* Multicolor border layer */
-.neon-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 2px;
-  border-radius: var(--radius);
-  background: var(--neon-gradient);
-  background-size: 300% 300%;
-  animation: borderMove 6s linear infinite;
-  z-index: -1;
-  -webkit-mask: 
-      linear-gradient(#fff 0 0) content-box, 
-      linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
-/* subtle border movement */
-@keyframes borderMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Text styling inside neon card */
-.neon-card h3 {
-  margin: 0 0 8px 0;
-  font-size: 1.02rem;
-  font-weight: 700;
-  background: var(--neon-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-.neon-card p {
+/* -------------------- GENERAL -------------------- */
+body {
   margin: 0;
-  font-size: 0.92rem;
-  color: var(--muted);
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+  animation: bgGradient 20s ease infinite;
+  background: linear-gradient(270deg, #ff6b6b, #ffcc00, #00aaff, #7f53ac, #00ff99, #ff66cc, #00ffff, #ff9933);
+  background-size: 1600% 1600%;
 }
 
-/* Add spacing between neon cards */
-.neon-card + .neon-card {
-  margin-top: 14px;
-}
-
-/* ========== STAGGERED SLIDE-IN ANIMATION ========== */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
-}
-
-.reveal.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Delays for stagger effect */
-.reveal:nth-child(1) { transition-delay: 0.1s; }
-.reveal:nth-child(2) { transition-delay: 0.22s; }
-.reveal:nth-child(3) { transition-delay: 0.34s; }
-.reveal:nth-child(4) { transition-delay: 0.46s; }
-.reveal:nth-child(5) { transition-delay: 0.58s; }
-.reveal:nth-child(6) { transition-delay: 0.70s; }
-.reveal:nth-child(7) { transition-delay: 0.82s; }
-.reveal:nth-child(8) { transition-delay: 0.94s; }
-
-/* ========== SERVICE SECTION HIGHLIGHT STRIP ========== */
-/* Creates a subtle horizontal band behind service blocks */
-.service-section {
-  background: linear-gradient(90deg,
-      rgba(14,165,246,0.04),
-      rgba(124,58,237,0.04),
-      rgba(236,72,153,0.04),
-      rgba(249,115,22,0.04),
-      rgba(245,158,11,0.04),
-      rgba(6,182,212,0.04));
-  padding: 32px 0;
-}
-
-/* ========== MULTICOLOR HEADING STRIPS ========== */
-.heading-strip {
-  display: inline-block;
-  padding: 6px 12px;
-  border-radius: 10px;
-  font-weight: 700;
-  background: var(--neon-gradient);
-  background-size: 200% 200%;
-  animation: stripMove 7s linear infinite;
-  -webkit-background-clip: text;
-  color: transparent;
-  margin-bottom: 12px;
-}
-@keyframes stripMove {
+@keyframes bgGradient {
   0% { background-position: 0% 50%; }
+  25% { background-position: 50% 100%; }
   50% { background-position: 100% 50%; }
+  75% { background-position: 50% 0%; }
   100% { background-position: 0% 50%; }
 }
 
-/* ========== MULTICOLOUR BULLETS ========== */
-.multi-bullet li {
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1100px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* -------------------- NAVBAR -------------------- */
+.navbar {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-shadow: 0 0 10px #fff, 0 0 20px #ffcc00;
+}
+.nav-menu {
   list-style: none;
-  position: relative;
-  margin: 8px 0;
-  padding-left: 18px;
+  display: flex;
+  gap: 25px;
 }
-.multi-bullet li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 6px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--neon-gradient);
-  background-size: 200% 200%;
-  animation: borderMove 6s linear infinite;
+.nav-menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
-
-/* ========== MULTICOLOUR DIVIDER ========== */
-.gradient-divider {
-  width: 100%;
+.nav-menu li a:hover {
+  color: #ffdd55;
+  text-shadow: 0 0 10px #ffdd55, 0 0 20px #ffcc00;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.hamburger .bar {
   height: 3px;
-  border-radius: 50px;
-  margin: 26px 0;
-  background: var(--neon-gradient);
-  background-size: 300% 300%;
-  animation: borderMove 8s linear infinite;
+  width: 25px;
+  background-color: #fff;
+  margin: 4px 0;
+  border-radius: 2px;
 }
 
-/* ========== RESPONSIVE FIXES FOR CARDS & LAYOUT ========== */
+/* -------------------- INTRO SECTION -------------------- */
+.intro {
+  padding: 80px 0 60px;
+}
+.typing-text {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid #fff;
+  animation: typing 10s steps(80, end), blink 0.8s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+/* -------------------- QUOTE CARD -------------------- */
+.quote-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  padding: 40px 25px;
+  color: #fff;
+  margin: 50px 0;
+  animation: colorShift 15s ease infinite;
+  transition: background 1s ease;
+}
+@keyframes colorShift {
+  0% { background-color: #ff6b6b; }
+  25% { background-color: #ffcc00; }
+  50% { background-color: #00aaff; }
+  75% { background-color: #7f53ac; }
+  100% { background-color: #00ff99; }
+}
+
+/* -------------------- PHOTO SHOWCASE -------------------- */
+.photo-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin: 60px 0;
+}
+.photo-card {
+  width: 45%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25), 0 0 15px rgba(255,255,255,0.2);
+  animation: slideIn 3s ease forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.photo-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255,255,255,0.6);
+}
+.photo-card img {
+  width: 100%;
+  transition: transform 0.5s;
+}
+.photo-card:hover img {
+  transform: scale(1.1);
+}
+@keyframes slideIn {
+  from { transform: translateX(-40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* -------------------- SERVICES SECTION -------------------- */
+.services {
+  margin: 80px 0;
+}
+.service-card {
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px auto;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  border: 2px solid rgba(255,255,255,0.25);
+  transition: transform 0.3s, background 5s ease, box-shadow 0.3s;
+  animation: gradientShift 10s linear infinite;
+}
+@keyframes gradientShift {
+  0% { background-color: #00aaff; }
+  25% { background-color: #7f53ac; }
+  50% { background-color: #ffcc00; }
+  75% { background-color: #ff6b6b; }
+  100% { background-color: #00ff99; }
+}
+.service-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 25px rgba(255,255,255,0.6);
+}
+
+/* -------------------- TEAM SECTION -------------------- */
+.team {
+  margin: 80px 0;
+}
+.team h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  text-shadow: 0 0 15px #fff, 0 0 25px #00ffcc;
+}
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+.member-card {
+  width: 150px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  animation: fadeSlide 2s ease-in-out;
+  border: 2px solid rgba(255,255,255,0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.member-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+@keyframes fadeSlide {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.member-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 3px solid #fff;
+  box-shadow: 0 0 10px #fff;
+}
+.member-card h4 {
+  font-size: 1.1rem;
+  margin: 5px 0;
+  text-shadow: 0 0 8px #fff;
+}
+.member-card p {
+  font-size: 0.9rem;
+  color: #eee;
+}
+
+/* -------------------- FOOTER -------------------- */
+.footer {
+  padding: 40px 20px;
+  background: rgba(0,0,0,0.6);
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 2px solid rgba(255,255,255,0.2);
+  text-shadow: 0 0 10px #fff, 0 0 20px #00ffff;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
 @media (max-width: 768px) {
-  .neon-card {
-    padding: 16px;
-  }
-  .neon-card h3 {
-    font-size: 0.98rem;
-  }
-  .features-grid,
-  .about-grid .container {
-    gap: 16px;
-  }
+  .nav-menu { display: none; }
+  .hamburger { display: flex; }
+  .photo-card { width: 90%; }
+  .member-card { width: 45%; }
+  .typing-text { font-size: 1.2rem; }
 }
-/* PART 3 CSS additions */
-
-/* Hover glow effect for neon cards */
-.neon-card.neon-hover {
-  transform: translateY(-6px) scale(1.01);
-  transition: transform 300ms cubic-bezier(.2,.9,.26,1), box-shadow 300ms ease;
-  box-shadow: 0 18px 50px rgba(124,58,237,0.12), 0 6px 30px rgba(14,165,164,0.06);
-}
-
-/* Make reveal use translateY for stagger effect consistency */
-.reveal { transform: translateY(20px); opacity:0 }
-.reveal.in-view { transform: translateY(0); opacity:1 }
-
-/* Ensure hero parallax transform doesn't break layout */
-.about-hero { will-change: transform }
-
-/* Better safe padding for tiny phones to avoid cut text */
-@media (max-width:360px){
-  .container { padding-left:18px; padding-right:18px }
-  h1 { font-size:1.35rem }
-  .about-hero-text { font-size:0.95rem }
-}
-
-/* Make nav links easier to tap on mobile */
-.nav-menu .nav-link { padding:10px 12px }
-
-/* Ensure dropdown menu stays fully visible on small screens */
-.dropdown-menu { max-width:260px; word-break:break-word }
